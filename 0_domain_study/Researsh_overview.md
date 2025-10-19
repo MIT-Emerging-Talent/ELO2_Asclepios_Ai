@@ -10,35 +10,64 @@ Substance use disorders represent a significant global health and economic chall
 
 ### Facility-Level Challenges
 
-SUD treatment facilities face persistent operational challenges in balancing patient needs against resource constraints. Many programs experience uneven capacity utilization, with long waiting lists coexisting alongside underfilled beds due to patient dropout and inflexible scheduling practices. Facilities struggle to determine optimal treatment durations for individual patients while maintaining adequate throughput across their programs. Current approaches often rely on standardized treatment lengths rather than personalized plans informed by individual risk profiles and predicted outcomes.
-Access barriers further complicate facility operations. Medicare beneficiaries experience significantly reduced geographic accessibility to SUD treatment facilities, as Medicare acceptance rates (41.9%) remain substantially lower than other payment forms. This payment disparity creates an additional resource allocation constraint beyond bed capacity and staffing, particularly affecting older adults amid the growing overdose crisis. Effective facility optimization must therefore account for payer mix limitations that restrict which patient populations can access available treatment slots.
+SUD treatment facilities face persistent operational challenges in balancing patient needs against resource constraints.
+ Many programs experience uneven capacity utilization, with long waiting lists coexisting alongside underfilled beds due to
+  patient dropout and inflexible scheduling practices. Facilities struggle to determine optimal treatment durations for individual
+   patients while maintaining adequate throughput across their programs. Current approaches often rely on standardized treatment
+    lengths rather than personalized plans informed by individual risk profiles and predicted outcomes.
+Access barriers further complicate facility operations. Medicare beneficiaries experience significantly reduced geographic 
+accessibility to SUD treatment facilities, as Medicare acceptance rates (41.9%) remain substantially lower than other payment forms. 
+This payment disparity creates an additional resource allocation constraint beyond bed capacity and staffing, particularly affecting
+ older adults amid the growing overdose crisis. Effective facility optimization must therefore account for payer mix limitations
+  that restrict which patient populations can access available treatment slots.
 
 ### Limitations of Existing Solutions
 
-Most current technology applications in SUD treatment focus on reactive relapse detection rather than proactive treatment planning. Mobile applications and wearable devices monitor physiological and behavioral signals to flag imminent relapse risk and trigger real-time interventions. While these tools provide valuable individual-level support, they operate after the fact and do not address facility scheduling or treatment length optimization. The field lacks comprehensive platforms that use predictive analytics proactively to plan treatment courses and allocate resources before problems occur.
+Most current technology applications in SUD treatment focus on reactive relapse detection rather than proactive treatment planning.
+ Mobile applications and wearable devices monitor physiological and behavioral signals to flag imminent relapse risk and trigger real-time interventions. While these tools provide valuable individual-level support, they operate after the fact and do not address facility 
+ scheduling or treatment length optimization. The field lacks comprehensive platforms that use predictive analytics proactively
+  to plan treatment courses and allocate resources before problems occur.
 
 ### Evidence for Predictive Approaches
 
-Research demonstrates that predictive models can meaningfully improve treatment outcomes. In general hospital settings, analytics-based interventions have reduced readmission rates by approximately 10-20%. In mental health and SUD contexts, machine learning models have achieved AUROCs around 0.73-0.74 for predicting 30-day readmission risk. These models have identified key risk factors including prior admissions, comorbidities, and discharge plans that can guide targeted care. Studies of outpatient SUD treatment have revealed factors strongly associated with completing 90 days or more of therapy, including psychiatric comorbidity, substance type (particularly opioids and amphetamines), and engagement with ambulatory care and self-help programs.
+Research demonstrates that predictive models can meaningfully improve treatment outcomes. In general hospital settings, 
+analytics-based interventions have reduced readmission rates by approximately 10-20%. In mental health and SUD contexts, 
+machine learning models have achieved AUROCs around 0.73-0.74 for predicting 30-day readmission risk. These models have
+ identified key risk factors including prior admissions, comorbidities, and discharge plans that can guide targeted care.
+  Studies of outpatient SUD treatment have revealed factors strongly associated with completing 90 days or more of therapy,
+   including psychiatric comorbidity, substance type (particularly opioids and amphetamines), and engagement with ambulatory 
+   care and self-help programs.
 
 ## Problem Statement
 
-Despite the critical importance of completing adequate treatment duration for sustained recovery, SUD facilities lack systematic approaches to personalizing treatment length based on individual patient characteristics and predicted outcomes. Approximately 30% of patients are readmitted within one year following discharge, indicating that many individuals either receive insufficient treatment or discontinue prematurely. Facilities operate with suboptimal capacity utilization, unable to effectively match the volume and timing of patient admissions with available beds and staff resources. This mismatch results in both unfilled treatment slots and extended waitlists, limiting access for individuals seeking care.
+Despite the critical importance of completing adequate treatment duration for sustained recovery, SUD facilities lack systematic
+ approaches to personalizing treatment length based on individual patient characteristics and predicted outcomes. Approximately 30% 
+  patients are readmitted within one year following discharge, indicating that many individuals either receive insufficient 
+   or discontinue prematurely. Facilities operate with suboptimal capacity utilization, unable to effectively match the volume and
+    timing of patient admissions with available beds and staff resources. This mismatch results in both unfilled treatment slots
+     and extended waitlists, limiting access for individuals seeking care.
 
 Key challenges include:
 
 Inability to predict which patients require longer or more intensive treatment based on their risk profiles
 Lack of data-driven guidance for determining optimal treatment duration for individual patients
 Absence of facility-level optimization tools that balance individual patient needs against total capacity constraints
-Limited integration of known risk factors (substance type, psychiatric comorbidity, prior treatment history, social support) into treatment planning decisions
+Limited integration of known risk factors (substance type, psychiatric comorbidity, prior treatment history, social support) 
+into treatment planning decisions
 Insufficient capacity forecasting to support proactive intake management and staffing decisions
-These gaps result in preventable readmissions, inefficient resource utilization, and suboptimal outcomes for patients who would benefit from personalized treatment planning. There is an urgent need for a comprehensive AI-driven platform that combines individual-level risk prediction with facility-wide optimization to improve both patient outcomes and operational efficiency.
+These gaps result in preventable readmissions, inefficient resource utilization, and suboptimal outcomes
+ for patients who would benefit from personalized treatment planning. There is an urgent need for
+  a comprehensive AI-driven platform that combines individual-level risk prediction with facility-wide 
+  optimization to improve both patient outcomes and operational efficiency.
 
 ## Research Process Overview
 
 ### 🔹 Divergence (Exploration Phase)
 
-We began by examining the current landscape of technology applications in SUD treatment and behavioral health operations. Our initial exploration revealed that while various digital health tools exist for monitoring and supporting patients during and after treatment, there is a notable absence of comprehensive systems addressing facility-level planning and optimization. We conducted a broad review across multiple dimensions:
+We began by examining the current landscape of technology applications in SUD treatment and behavioral health operations.
+ Our initial exploration revealed that while various digital health tools exist for monitoring and supporting patients 
+ during and after treatment, there is a notable absence of comprehensive systems addressing facility-level planning and optimization.
+  We conducted a broad review across multiple dimensions:
 
 Predictive modeling approaches for readmission risk in mental health and SUD populations
 Treatment completion and retention factors in outpatient and residential SUD programs
@@ -46,18 +75,26 @@ Operational challenges in behavioral health facility management
 Applications of machine learning in healthcare capacity planning and resource allocation
 Clinical decision support systems in addiction medicine
 Patient risk factors associated with dropout and relapse across different substance types
-Through this exploratory process, we identified consistent patterns: facilities need better tools to match treatment intensity and duration to individual patient needs, and the evidence base for predictive modeling in this context is sufficiently developed to support practical applications.
+Through this exploratory process, we identified consistent patterns: facilities need better tools to match treatment
+ intensity and duration to individual patient needs, and the evidence base for predictive modeling in this context is
+  sufficiently developed to support practical applications.
 
 ### 🔹 Convergence (Focusing Phase)
 
-After reviewing existing research and current practice gaps, we focused our efforts on developing an integrated AI-driven treatment planning system that addresses both individual patient needs and facility-level resource constraints. The persistent problem of high readmission rates combined with inefficient capacity utilization represented a critical opportunity for data-driven intervention. Hence we formulated these research objectives:
+After reviewing existing research and current practice gaps, we focused our efforts on developing an integrated AI-driven 
+treatment planning system that addresses both individual patient needs and facility-level resource constraints.
+ The persistent problem of high readmission rates combined with inefficient capacity utilization represented
+  a critical opportunity for data-driven intervention. Hence we formulated these research objectives:
 
 
 ## This research aims to:
 
-Develop and validate predictive models that estimate individual patient likelihood of sustained recovery under different treatment duration and intensity scenarios, incorporating known risk factors such as substance type, psychiatric comorbidity, prior treatment history, and psychosocial factors.
+Develop and validate predictive models that estimate individual patient likelihood of sustained recovery under 
+different treatment duration and intensity scenarios, incorporating known risk factors such as substance type,
+psychiatric comorbidity, prior treatment history, and psychosocial factors.
 
-Design and implement a facility-level optimization algorithm that maximizes successful treatment outcomes across a patient population while respecting bed capacity, staff availability, and program structure constraints.
+Design and implement a facility-level optimization algorithm that maximizes successful treatment outcomes across 
+a patient population while respecting bed capacity, staff availability, and program structure constraints.
 
 
 ## References
