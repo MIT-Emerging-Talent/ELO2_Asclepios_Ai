@@ -19,22 +19,33 @@ This project will investigate the optimization of treatment planning and
 
 Substance use disorders represent a significant global health and economic challenge,
  with the United States alone incurring annual societal costs exceeding $740 billion.
-  Effective treatment typically requires patients to complete lengthy programs, often
-   three months or longer, to sustain long-term recovery. However, many patients relapse
-    or discontinue treatment prematurely, resulting in high readmission rates of approximately
-     30% within one year at typical SUD rehabilitation facilities. This cycle of relapse and
-      readmission creates substantial costs through repeated inpatient stays and emergency
-       care while simultaneously straining limited treatment capacity.
+  Effective treatment typically requires patients to complete lengthy programs,
+   often
+   three months or longer, to sustain long-term recovery. However, many patients
+    relapse
+    or discontinue treatment prematurely, resulting in high readmission rates of
+     approximately
+     30% within one year at typical SUD rehabilitation facilities. This cycle of
+      relapse and
+      readmission creates substantial costs through repeated inpatient stays and
+       emergency care while simultaneously
+        straining limited treatment capacity.
 
 ### Facility-Level Challenges
 
-SUD treatment facilities face persistent operational challenges in balancing patient needs
- against resource constraints. Many programs experience uneven capacity utilization, with
-  long waiting lists coexisting alongside underfilled beds due to patient dropout and
-   inflexible scheduling practices. Facilities struggle to determine optimal treatment
-    durations for individual patients while maintaining adequate throughput across their
-     programs. Current approaches often rely on standardized treatment lengths rather than
-      personalized plans informed by individual risk profiles and predicted outcomes.
+SUD treatment facilities face persistent operational challenges in balancing
+ patient needs
+ against resource constraints. Many programs experience uneven capacity
+  utilization, with
+  long waiting lists coexisting alongside underfilled beds due to patient
+   dropout and
+   inflexible scheduling practices. Facilities struggle to determine optimal
+    treatment durations for
+     individual patients while maintaining adequate throughput
+      across their programs.
+       Current approaches often rely on standardized treatment
+       lengths rather than personalized plans
+        informed by individual risk profiles predicted outcomes.
 
 Access barriers further complicate facility operations. Medicare beneficiaries experience
  significantly reduced geographic accessibility to SUD treatment facilities, as Medicare
