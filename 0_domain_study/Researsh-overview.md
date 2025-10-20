@@ -1,11 +1,17 @@
 # Research Overview
 
-This project will investigate the optimization of treatment planning and resource allocation
- in substance use disorder (SUD) rehabilitation facilities through artificial intelligence
-  and predictive analytics. The study focuses on developing a data-driven platform that
-   personalizes treatment duration recommendations while maximizing facility capacity
-    utilization. The goal is to reduce preventable readmissions and improve recovery
-     outcomes by matching patient needs with available resources more effectively.
+This project will investigate the optimization of treatment planning and
+ resource allocation
+ in substance use disorder (SUD) rehabilitation facilities through
+  artificial intelligence
+  and predictive analytics. The study focuses on developing a
+   data-driven platform that
+   personalizes treatment duration recommendations while maximizing
+    facility capacity
+    utilization. The goal is to reduce preventable readmissions and
+     improve recovery
+     outcomes by matching patient needs with available resources
+      more effectively.
 
 ## Background
 
@@ -74,22 +80,30 @@ Despite the critical importance of completing adequate treatment duration for
 
 Key challenges include:
 
-- Inability to predict which patients require longer or more intensive
- treatment based on their risk profiles
-- Lack of data-driven guidance for determining optimal treatment duration for
+- Inability to predict which patients require longer or more
+ intensive treatment based on their risk profiles
+- Lack of data-driven guidance for determining
+ optimal treatment duration for
  individual patients
-- Absence of facility-level optimization tools that balance individual
+- Absence of facility-level optimization tools
+ that balance individual
  patient needs against total capacity constraints
-- Limited integration of known risk factors (substance type, psychiatric comorbidity,
- prior treatment history, social support) into treatment planning decisions
-- Insufficient capacity forecasting to support proactive intake management
+- Limited integration of known risk factors
+ (substance type, psychiatric comorbidity,
+ prior treatment history, social support)
+  into treatment planning decisions
+- Insufficient capacity forecasting to support
+ proactive intake management
  and staffing decisions
 
-These gaps result in preventable readmissions, inefficient resource utilization,
- and suboptimal outcomes for patients who would benefit from personalized treatment
-  planning.
-  There is an urgent need for a comprehensive AI-driven platform that combines
-   individual-level risk prediction with facility-wide optimization to improve
+These gaps result in preventable readmissions, inefficient
+ resource utilization,
+ and suboptimal outcomes for patients who would benefit from
+  personalized treatment planning.
+  There is an urgent need for a comprehensive AI-driven platform
+   that combines
+   individual-level risk prediction with facility-wide optimization
+    to improve
     both patient outcomes and operational efficiency.
 
 ## Research Process Overview
