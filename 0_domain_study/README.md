@@ -1,111 +1,202 @@
-# Domain Research
+# Literature Review
 
-## Recovery Duration Optimizer — Asclepios AI (SUD Treatment Predictive Analytics)
+This project will investigate optimization of treatment planning and resource
+allocation in substance use disorder (SUD) rehabilitation facilities using
+artificial intelligence and predictive analytics. The study focuses on
+developing a data-driven platform that personalizes treatment-duration
+recommendations while maximizing facility capacity utilization. The goal is to
+reduce preventable readmissions and improve recovery outcomes by matching
+patient needs with available resources more effectively.
 
-Asclepios AI helps SUD facilities predict optimal treatment duration,
- reduce readmissions, and maximize clinician efficiency — shifting
-  care from reactive relapse management to proactive recovery planning.
+## Background
 
----
+### Current State of SUD Treatment
 
-## Purpose
+Substance use disorders represent a significant global health and economic
+challenge; the United States alone incurs annual societal costs exceeding
+$740 billion. Effective treatment typically requires patients to complete
+lengthy programs—often three months or longer—to sustain long-term recovery.
+However, many patients relapse or discontinue treatment prematurely, resulting
+in high readmission rates of approximately 30% within one year at typical SUD
+rehabilitation facilities. This cycle of relapse and readmission creates
+substantial costs through repeated inpatient stays and emergency care while
+simultaneously straining limited treatment capacity.
 
-This repository collects research, datasets, notes, and implementation
- ideas for building data-driven tools that support treatment planning
-  for Substance Use Disorder (SUD). The focus is on models and operational
-   designs that recommend individualized treatment duration, estimate relapse
-    risk, and improve clinical throughput while attending to fairness, safety,
-     and policy constraints.
+### Facility-Level Challenges
 
----
+SUD treatment facilities face persistent operational challenges in balancing
+patient needs against resource constraints. Many programs experience uneven
+capacity utilization, with long waiting lists coexisting alongside underfilled
+beds due to patient dropout and inflexible scheduling practices. Facilities
+struggle to determine optimal treatment durations for individual patients
+while maintaining adequate throughput across their programs. Current
+approaches often rely on standardized treatment lengths rather than
+personalized plans informed by individual risk profiles and predicted outcomes.
 
-## Scope
+Access barriers further complicate facility operations. Medicare beneficiaries
+experience significantly reduced geographic accessibility to SUD treatment
+facilities, as Medicare acceptance rates (41.9%) remain substantially lower
+than other payment forms. This payment disparity creates an additional resource
+allocation constraint beyond bed capacity and staffing, particularly affecting
+older adults amid the growing overdose crisis. Effective facility
+optimization must therefore account for payer-mix limitations that restrict
+which patient populations can access available treatment slots.
 
-- Predictive modeling for time-to-relapse and optimal treatment length
-- Survival analysis, time-to-event modeling, and risk scoring
-- Reinforcement learning and decision policies for treatment planning
-- Feature engineering that includes clinical, social-determinant, and
- system-level signals
-- Fairness, privacy, and ethical evaluation of clinical models
-- Cost and workforce efficiency modeling for program design
+### Limitations of Existing Solutions
 
----
+Most current technology applications in SUD treatment focus on reactive
+relapse detection rather than proactive treatment planning. Mobile
+applications and wearable devices monitor physiological and behavioral
+signals to flag imminent relapse risk and trigger real-time interventions.
+While these tools provide valuable individual-level support, they operate
+after the fact and do not address facility scheduling or treatment-length
+optimization. The field lacks comprehensive platforms that use predictive
+analytics proactively to plan treatment courses and allocate resources before
+problems occur.
 
-## High-value Datasets & Sources
+### Evidence for Predictive Approaches
 
-- SAMHSA — Treatment Episode Data Set (TEDS):
- <https://www.samhsa.gov/data/data-we-collect/teds/datafiles>
-- NSDUH — National Survey on Drug Use and Health:
- <https://www.samhsa.gov/data/data-we-collect/nsduh/datafiles>
-- CDC WONDER — Mortality & overdose: <https://wonder.cdc.gov/>  
-- Medicaid State Drug Utilization & CMS behavioral health resources:
- <https://www.cms.gov/>
-- RAND OPTIC, NIH HEAL, NIDA resources for policy and outcome context
+Research demonstrates that predictive models can meaningfully improve
+treatment outcomes. In general hospital settings, analytics-based
+interventions have reduced readmission rates by approximately 10–20%. In
+mental health and SUD contexts, machine-learning models have achieved AUROCs
+around 0.73–0.74 for predicting 30-day readmission risk. These models have
+identified key risk factors including prior admissions, comorbidities, and
+discharge plans that can guide targeted care. Studies of outpatient SUD
+treatment have revealed factors strongly associated with completing 90 days
+or more of therapy, including psychiatric comorbidity, substance type
+(particularly opioids and amphetamines), and engagement with ambulatory care
+and self-help programs.
 
----
+## Problem Statement
 
-## Methods & Tools
+Despite the critical importance of completing adequate treatment duration for
+sustained recovery, SUD facilities lack systematic approaches to personalizing
+treatment length based on individual patient characteristics and predicted
+outcomes. Approximately 30% of patients are readmitted within one year
+following discharge, indicating that many individuals either receive
+insufficient treatment or discontinue prematurely. Facilities operate with
+suboptimal capacity utilization, unable to effectively match the volume and
+timing of patient admissions with available beds and staff resources. This
+mismatch results in both unfilled treatment slots and extended waitlists,
+limiting access for individuals seeking care.
 
-- Survival analysis: Kaplan–Meier, Cox PH, AFT models (lifelines,
- scikit-survival)  
-- Gradient-boosted survival models: XGBoost AFT and survival objectives  
-- Reinforcement learning for sequential decision-making (Stable-Baselines3,
- custom simulators)  
-- Explainability & fairness: SHAP, Fairlearn, group calibration and
- counterfactual checks  
-- Infrastructure: Python, Jupyter, ML workflow tooling (MLflow, DVC), secure
- data handling practices (de-identification, controlled access)
+Key challenges include:
 
----
+- Inability to predict which patients require longer or more intensive
+  treatment based on their risk profiles.
+- Lack of data-driven guidance for determining optimal treatment duration for
+  individual patients.
+- Absence of facility-level optimization tools that balance individual patient
+  needs against total capacity constraints.
+- Limited integration of known risk factors (substance type, psychiatric
+  comorbidity, prior treatment history, social support) into treatment
+  planning decisions.
+- Insufficient capacity forecasting to support proactive intake management and
+  staffing decisions.
 
-## Recommended Reading (starter list)
+These gaps result in preventable readmissions, inefficient resource
+utilization, and suboptimal outcomes for patients who would benefit from
+personalized treatment planning. There is an urgent need for a comprehensive
+AI-driven platform that combines individual-level risk prediction with
+facility-wide optimization to improve both patient outcomes and operational
+efficiency.
 
-- “Predicting Relapse in Substance Use Disorder: Machine Learning
- Approaches” — Frontiers in Psychiatry (2021)  
-- “Reinforcement Learning for Treatment Planning” — Nature Medicine (2022)  
-- “Fairness in Machine Learning Models for Health Data” — JAMA Network (2023)  
-- Lifelines and scikit-survival documentation for survival methods
+## Research Process Overview
 
----
+### Divergence (Exploration Phase)
 
-## Quick start for new contributors
+We began by examining the current landscape of technology applications in SUD
+treatment and behavioral health operations. Our initial exploration revealed
+that while various digital health tools exist for monitoring and supporting
+patients during and after treatment, there is a notable absence of
+comprehensive systems addressing facility-level planning and optimization.
+We conducted a broad review across multiple dimensions:
 
-1. Review datasets referenced above and note licensing/access requirements.  
-2. Read the notebooks in /notes/ and experiments in /papers/ to learn prior
- approaches.  
-3. Start with a survival baseline (Kaplan–Meier + Cox PH) on a cleaned dataset
- to establish time-to-relapse baselines.  
-4. Iterate with uplift/individualized treatment-duration modeling and include
- fairness audits for protected groups.  
-5. Document all experiments and model decisions in /notes/ and track artifacts
- with MLflow or DVC.
+- Predictive modeling approaches for readmission risk in mental health and
+  SUD populations.
+- Treatment completion and retention factors in outpatient and residential SUD
+  programs.
+- Operational challenges in behavioral health facility management.
+- Applications of machine learning in healthcare capacity planning and
+  resource allocation.
+- Clinical decision-support systems in addiction medicine.
+- Patient risk factors associated with dropout and relapse across different
+  substance types.
 
----
+Through this exploratory process we identified consistent patterns: facilities
+need better tools to match treatment intensity and duration to individual
+patient needs, and the evidence base for predictive modeling in this context
+is sufficiently developed to support practical applications.
 
-## Folder structure
+### Convergence (Focusing Phase)
 
-/0_domain_study
+After reviewing existing research and current practice gaps, we focused our
+efforts on developing an integrated AI-driven treatment-planning system that
+addresses both individual patient needs and facility-level resource
+constraints. The persistent problem of high readmission rates combined with
+inefficient capacity utilization represented a critical opportunity for
+data-driven intervention. Hence we formulated these research objectives:
 
-- README.md                # This file
-- papers/                  # Collected research PDFs and summaries
-- datasets/                # Dataset links, access notes, ingestion scripts
-- notes/                   # Readme-driven summaries, experiment notes, notebooks
-- web_links.txt            # Additional URLs and bookmarks
+## Research Objectives
 
----
+This research aims to:
 
-## Ethics, Privacy & Governance
+1. Develop and validate predictive models that estimate individual patient
+   likelihood of sustained recovery under different treatment-duration and
+   intensity scenarios, incorporating known risk factors such as substance
+   type, psychiatric comorbidity, prior treatment history, and psychosocial
+   factors.
 
-- Prioritize de-identification and minimum necessary data access.  
-- Perform subgroup fairness and calibration checks before any clinical
- deployment.  
-- Engage clinical stakeholders and IRBs for study design and prospective
- validation.  
-- Maintain an audit trail for model changes and decisions that could affect care.
+2. Design and implement a facility-level optimization algorithm that
+   maximizes successful treatment outcomes across a patient population while
+   respecting bed capacity, staff availability, and program-structure
+   constraints.
 
----
+## References
 
-## Maintainer
+1. AI in addiction: Harnessing technology for diagnosis, prevention, and
+   recovery: A narrative review. Pro Biologists. Available at:
+   <https://www.probiologists.com/>
 
-Wuor Bhang — Asclepios AI  
-Date: October 18, 2025
+2. Determinants of outpatient substance use disorder treatment
+   length-of-stay and completion: the case of a treatment program in the
+   southeast U.S. Scientific Reports. Available at: <https://www.nature.com/>
+
+3. Understanding readmission to substance use disorder treatment in Chile:
+   a mixed-method study. PubMed. Available at: <https://pubmed.ncbi.nlm.nih.gov/>
+
+4. Evaluation of Substance Use Disorder Readmission and Length of Hospital
+   Stay in a Major Rehabilitation Center in the Gulf States: a Retrospective
+   Cohort Study. PubMed. Available at: <https://pubmed.ncbi.nlm.nih.gov/>
+
+5. Patients at Risk for 30-Day Readmission. MDedge. Available
+ at:
+   <https://ma1.mdedge.com/>
+
+6. Too few resources to meet demand for substance use disorder treatment in
+   NC prisons. North Carolina Health News. 2024. Available at:
+   <https://www.northcarolinahealthnews.org/>
+
+7. Why Predictive Healthcare Analytics Cuts Patient Readmission Rates by 47%.
+   The AI Journal. Available at: <https://aijourn.com/>
+
+8. Predicting hospital readmission in patients with mental or substance use
+   disorders: A machine learning approach. PubMed. Available at:
+   <https://pubmed.ncbi.nlm.nih.gov/>
+
+9. Analyzing Dropout in Alcohol Recovery Programs: A Machine Learning
+   Approach. PubMed. Available at: <https://pubmed.ncbi.nlm.nih.gov/>
+
+10. A business case for quality improvement in addiction treatment. Journal of
+ Substance Abuse Treatment.
+
+11. Corredor-Waldron A, Currie J. Tackling the Substance Use Disorder
+   Crisis: The Role of Access to Treatment Facilities. Journal of Health
+   Economics. 2022. Available at: <https://pubmed.ncbi.nlm.nih.gov/>
+
+12. Cantor JH, DeYoreo M, Hanson R, Kofner A, Kravitz D, Salas A, Stein BD,
+Kapinos KA. Patterns in geographic distribution of substance use
+disorder treatment facilities in the US and accepted forms of payment
+from 2010 to 2021. JAMA Network Open. 2021. Available at:
+<https://pubmed.ncbi.nlm.nih.gov/>
