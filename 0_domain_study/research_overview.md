@@ -1,4 +1,4 @@
-# Research Overview
+# Literature Review
 
 This project will investigate the optimization of treatment planning and
  resource allocation
@@ -170,7 +170,8 @@ This research aims to:
 
 1. AI in addiction: Harnessing technology for diagnosis, prevention, and recovery:
  A narrative review. *Pro Biologists*. Available
-  at: <https://www.probiologists.com/article/ai-in-addiction-harnessing-technology-for-diagnosis-prevention-and-recovery-a-narrative-review>
+  at:
+   <https://www.probiologists.com/article/ai-in-addiction-harnessing-technology-for-diagnosis-prevention-and-recovery-a-narrative-review>
 
 2. Determinants of outpatient substance use disorder
  treatment length-of-stay and completion: the case of a treatment
@@ -192,10 +193,12 @@ This research aims to:
   <https://www.northcarolinahealthnews.org/2024/01/10/too-much-need-too-few-resources-to-meet-all-of-the-demand-for-substance-use-treatment-in-nc-prisons/>
 
 7. Why Predictive Healthcare Analytics Cuts Patient Readmission Rates by
- 47%. *The AI Journal*. Available at: <https://aijourn.com/why-predictive-healthcare-analytics-cuts-patient-readmission-rates-by-47/>
+ 47%. *The AI Journal*. Available at:
+  <https://aijourn.com/why-predictive-healthcare-analytics-cuts-patient-readmission-rates-by-47/>
 
 8. Predicting hospital readmission in patients with mental or substance
- use disorders: A machine learning approach. *PubMed*. Available at: <https://pubmed.ncbi.nlm.nih.gov/32353752/>
+ use disorders: A machine learning approach. *PubMed*. Available at:
+  <https://pubmed.ncbi.nlm.nih.gov/32353752/>
 
 9. Analyzing Dropout in Alcohol Recovery Programs: A Machine Learning Approach.
  *PubMed*. Available at: <https://pubmed.ncbi.nlm.nih.gov/39200967/>
@@ -204,7 +207,8 @@ This research aims to:
  *Journal of Substance Abuse Treatment*.
 
 11. Corredor-Waldron A, Currie J. Tackling the Substance Use Disorder Crisis:
- The Role of Access to Treatment Facilities. *Journal of Health Economics*. 2022. Available at:
+ The Role of Access to Treatment Facilities. *Journal of Health Economics*. 2022.
+  Available at:
   <https://pubmed.ncbi.nlm.nih.gov/34990993/>
 
 12. Cantor JH, DeYoreo M, Hanson R, Kofner A, Kravitz D, Salas A, Stein BD, Kapinos KA.
