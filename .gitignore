@@ -19,5 +19,5 @@ __pycache__/
 *.pyc
 
 # Except these files
-. 1_datasets\processed\tedsd_puf_2023_cleaned.csv
-. 1_datasets\raw\tedsd_puf_2023.csv
+. 1_datasets\processed\*.csv
+. 1_datasets\raw\*.csv
