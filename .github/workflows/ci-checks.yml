@@ -25,7 +25,7 @@ jobs:
       - name: Python - Check Formatting
         uses: astral-sh/ruff-action@v1
         with:
-          args: "format --check --extend-ignore F541,F841"
+          args: "format --check"
 
   py_linting:
     runs-on: ubuntu-latest
