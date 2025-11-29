@@ -1,189 +1,407 @@
-# 📊 Datasets: Guide
+# Datasets Folder
 
-This folder is dedicated to storing all **datasets** used in the Asclepios
- AI project — an AI-powered platform designed to predict optimal treatment
-  duration and prevent costly readmissions for patients undergoing Substance
-   Use Disorder (SUD) treatment.
+## Overview
 
----
+This folder contains all datasets for the **Optimization of Treatment**
+**Planning and Resource Allocation in Substance Use Disorder (SUD)**
+**Rehabilitation Facilities** project. Data is organized into raw and
+processed subfolders following best practices for reproducible research.
 
-## 🧠 Purpose
+## Folder Structure
 
-To ensure **reproducibility** and **data transparency**, all raw datasets should
- be stored here exactly as downloaded. You may clean, preprocess, or enrich
-  them, but **never overwrite or modify the originals**.
-
----
-
-## 🗂️ Folder Structure Example
-
-```/datasets
-│
+```text
+1_datasets/
 ├── raw/
-│   ├── teds_treatment_episodes.raw.csv
-│   ├── nsduh_substance_use.raw.csv
-│
+│   ├── tedsa_puf_2023.csv
+│   └── tedsd_puf_2023.csv   
 ├── processed/
-│   ├── cleaned_treatment_data.csv
-│   ├── patient_predictions_ready.csv
-│
+│   ├── teds_a_2023_cleaned.csv
+│   ├── teds_analysis_ready.csv
+│   ├── teds_ml_ready.csv
+│   ├── teds_d_2023_cleaned.csv
+│   ├── teds_d_analysis_ready.csv
+│   └── teds_d_ml_ready.csv
+├── sample/
+│    └── tedsa_sample.csv
 └── README.md
+
 ```
 
 ---
 
-## 📑 Dataset Documentation
+## Raw Data
 
-### 1. SAMHSA Treatment Episode Dataset (TEDS)
+### `raw/tedsa_puf_2023.csv`
 
-- **Source:** [SAMHSA.gov Data Portal](https://www.samhsa.gov/data/data-we-collect/teds-treatment-episode-data-set)
-- **Description:** National data system on admissions to and discharges from
- substance abuse treatment facilities.
-- **Data Type:** Structured (Tabular)
-- **Format:** CSV
-- **Use in Project:** Train model to predict optimal treatment duration and
- readmission risk.
+**Source:** SAMHSA (Substance Abuse and Mental Health Services Administration)  
+**Dataset:** Treatment Episode Data Set - Admissions (TEDS-A), 2023 Public Use
+File  
+**Download:** [SAMHSA TEDS Data](https://www.samhsa.gov/data/data-we-collect/teds-treatment-episode-data-set/datafiles)
 
-### 2. UCI Drug Consumption Dataset
+**Characteristics:**
 
-- **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29)
-- **Description:** Self-reported data on drug consumption and related
- demographic variables.
-- **Data Type:** Structured (Tabular)
-- **Format:** CSV
-- **Use in Project:** Explore correlation between demographics, personality
- traits, and substance use patterns.
+- **Records:** ~1,625,833 admission records
+- **Variables:** 60 variables
+- **Year:** 2023 admissions
+- **Coverage:** 50 U.S. states, DC, Puerto Rico (excluding Delaware, South
+Carolina, West Virginia)
+- **Format:** CSV with numeric codes for categorical variables
+- **Size:** ~300 MB
 
-### 3. National Survey on Drug Use and Health (NSDUH)
+**Key Variables:**
 
-- **Source:** [SAMHSA Data Files](https://www.datafiles.samhsa.gov/)
-- **Description:** Annual survey on the use of tobacco, alcohol, illicit drugs,
- and mental health in the U.S.
-- **Data Type:** Structured (Tabular, Time Series)
-- **Format:** CSV / XLSX
-- **Use in Project:** Feature engineering for population-level risk prediction
- and treatment outcome benchmarking.
+- Demographics: Age, sex, race, ethnicity, education, employment
+- Substance use: Primary/secondary/tertiary substances, route, frequency, age
+at first use
+- Treatment: Service type, referral source, prior episodes, medication-assisted therapy
+- Clinical: DSM diagnosis, co-occurring mental health disorders
+- Socioeconomic: Income, insurance, living arrangement, arrests
+- Geographic: State, region, CBSA codes
 
-### 4. Synthetic Treatment Dataset
+**Data Restrictions:**
 
-- **Source:** Generated using [Synthetic Data Vault (SDV)](https://sdv.dev/)
- or [YData Synthetic](https://ydata.ai/products/ydata-synthetic)
-- **Description:** Artificial patient-level data simulating real clinical
- treatment records.
-- **Data Type:** Structured (Tabular)
-- **Format:** CSV / SQLite
-- **Use in Project:** Model testing, EDA, and algorithm benchmarking when real
- data is restricted.
+- Public use file with disclosure protection measures
+- Data swapping applied to protect confidentiality
+- Some geographic detail suppressed for small populations
 
 ---
 
-## 📘 Types of Datasets
+### `raw/tedsd_puf_2023.csv`
 
-### **Classification by Data Type**
+**Source:** SAMHSA (Substance Abuse and Mental Health Services Administration)  
+**Dataset:** Treatment Episode Data Set - Discharges (TEDS-D), 2023 Public Use
+File  
+**Download:** [SAMHSA TEDS Data](https://www.samhsa.gov/data/data-we-collect/teds-treatment-episode-data-set/datafiles)
 
-| Type | Description | Example |
-|------|--------------|----------|
-| Continuous | Can take any real value | Blood pressure, time in treatment |
-| Discrete | Countable quantities | Number of therapy sessions |
-| Nominal | Categories without order | Gender, facility name |
-| Ordinal | Ordered categories | Treatment stage (early, mid, late) |
-| Binary | Two possible outcomes | Readmission (yes/no) |
-| Time Series | Sequential data over time | Patient recovery progress |
+**Characteristics:**
 
----
+- **Records:** ~1,474,000 discharge records
+- **Variables:** ~50 variables
+- **Year:** 2023 discharges
+- **Coverage:** 50 U.S. states, DC, Puerto Rico
+- **Format:** CSV with numeric codes for categorical variables
+- **Size:** ~300 MB
 
-### **Classification by Structure**
+**Key Variables:**
 
-- **Structured Data:** CSV, Excel, SQL tables  
-- **Semi-Structured Data:** JSON, XML (EHRs)  
-- **Unstructured Data:** Clinical notes, text summaries
-
----
-
-### **Classification by Collection Method**
-
-- **Primary Data:** Collected directly through surveys or treatment centers  
-- **Secondary Data:** Published datasets (e.g., TEDS, NSDUH)  
-- **Synthetic Data:** Generated for simulation and model testing  
-- **Observational Data:** Real-world treatment outcomes  
-- **Experimental Data:** Controlled clinical trials
+- Demographics, substance use, treatment, clinical, socioeconomic, geographic  
+- Discharge-specific: _D suffix variables track patient status at discharge
 
 ---
 
-### **Classification by Size and Complexity**
+## Processed Data
 
-- **Small Data:** Patient-level samples (< 10k rows)
-- **Big Data:** Aggregated health records (> 1M rows)
-- **High-Dimensional:** Many features (psychological, behavioral, demographic variables)
+### `processed/teds_a_2023_cleaned.csv`
 
----
+**Created by:** `2_data_preparation\cleaning_teds_a.ipynb`  
+**Purpose:** Fully cleaned and human-readable dataset for all analyses
 
-### **Classification by Access Type**
+**Processing Steps:**
 
-| Type | Access | Example |
-|------|---------|----------|
-| Public | Freely available | UCI, SAMHSA datasets |
-| Private | Restricted | Hospital records |
-| Proprietary | Paid / Licensed | Clinical research databases |
+1. Missing value codes (-9) converted to NaN
+2. Data types optimized (categorical, Int8, Int64)
+3. 17 new features engineered for treatment optimization
+4. Categorical codes decoded to readable labels
+5. 50 relevant variables selected and renamed
 
----
+**Characteristics:**
 
-### **Classification by Purpose**
+- **Records:** ~1,625,833 (all original records retained)
+- **Variables:** 50 variables
+- **Format:** CSV with human-readable text labels
+- **Size:** ~500MB
+- **Missing Data:** Preserved as NaN for proper handling
 
-- **Transactional:** Treatment logs, appointments  
-- **Analytical:** Aggregated outcome metrics  
-- **Master:** Patient demographics, facility info  
-- **Metadata:** Dataset descriptions, schema info  
+**Variables:** See main project README or data dictionary for complete list
 
----
+**Use Cases:**
 
-### **Classification by Format**
+- Exploratory Data Analysis (EDA)
+- Initial statistical exploration
+- Visualization and reporting
+- General data inspection
 
-| Format | Description | Example |
-|---------|-------------|----------|
-| CSV / XLSX | Tabular | patient_data.csv |
-| JSON | Semi-structured | patient_record.json |
-| SQLite | Lightweight DB | treatment.db |
-| GeoJSON | Spatial | facility_locations.geojson |
-| Time Series | Temporal | relapse_trends.csv |
+### `processed/teds_d_2023_cleaned.csv`
 
----
+**Created by:** `2_data_preparation/cleaning_teds_d.ipynb`  
+**Purpose:** Fully cleaned TEDS-D dataset, human-readable
 
-## 🔍 Data Quality Checklist
+**Processing Steps:**
 
-- **Completeness:** Handle missing values carefully  
-- **Accuracy:** Validate entries, detect outliers  
-- **Consistency:** Ensure logical coherence  
-- **Timeliness:** Prefer recent and updated data  
-- **Ethics:** Anonymize sensitive patient information  
+1. Missing value codes (-9) converted to NaN
+2. Data types optimized (categorical, Int8, Int64)
+3. New features engineered for treatment optimization
+4. Categorical codes decoded to readable labels
+5. Relevant variables selected and renamed
 
----
+**Characteristics:**
 
-## ⚖️ Ethical Considerations
+- **Records:** ~1,474,000 (all original records retained)
+- **Variables:** 74 variables
+- **Format:** CSV with human-readable text labels
+- **Size:** ~500MB
+- **Missing Data:** Preserved as NaN for proper handling
 
-- Respect patient privacy (HIPAA, GDPR compliance)  
-- Avoid bias in model training (gender, race, socioeconomic)  
-- Use transparent methods and cite data sources properly  
-- Provide opt-out or anonymization mechanisms for sensitive data  
+**Use Cases:**
 
----
-
-## 🧩 Example Dataset Naming Conventions
-
-| Type | Example Name |
-|------|---------------|
-| Raw | `treatment_records.raw.csv` |
-| Cleaned | `treatment_records.cleaned.csv` |
-| Processed | `patient_outcomes_model_ready.csv` |
-| Synthetic | `synthetic_patient_data.csv` |
+- Exploratory Data Analysis (EDA)
+- Initial statistical exploration
+- Visualization and reporting
+- General data inspection
 
 ---
 
-### 🧷 Notes
+### `processed/teds_analysis_ready.csv`
 
-This dataset documentation ensures anyone can **clone, replicate, and validate**
- your results with minimal effort. Always keep your **data lineage**
-  (raw → cleaned → processed) clear and traceable.
+**Created by:** `2_data_preparation\missing_value_handling_teds_a.ipynb`  
+**Purpose:** Optimized for statistical analysis with minimal data loss
+
+**Processing Steps:**
+
+- Removed rows missing critical variables only:
+  - `patient_id`
+  - `service_type`
+  - `primary_substance`
+  - `age_group`
+  - `sex`
+- All other missing values preserved for pairwise deletion
+
+**Characteristics:**
+
+- **Records:** ~1,540,000 (95% retention)
+- **Variables:** 50 variables
+- **Missing Data:** Present in non-critical variables
+- **Strategy:** Pairwise deletion (each test uses available data)
+
+**Use Cases:**
+
+- Statistical hypothesis testing
+- Correlation analysis
+- Chi-square tests
+- Group comparisons (t-tests, ANOVA, Mann-Whitney)
+- Regression analysis
+
+**Advantages:**
+
+- Maximizes statistical power
+- Minimizes selection bias
+- Standard practice in epidemiological research
 
 ---
-© 2025 Asclepios AI — All Rights Reserved.
+
+### `processed/teds_d_analysis_ready.csv`
+
+**Created by:** `2_data_preparation/missing_value_handling_teds_d.ipynb`  
+**Purpose:** Optimized for statistical analysis with minimal data loss
+
+**Processing Steps:**
+
+- Removed rows missing critical variables only:
+  - `patient_id`
+  - `discharge_reason`
+  - `length_of_stay`
+- All other missing values preserved for pairwise deletion
+
+**Characteristics:**
+
+- **Records:** ~1,400,000 (95% retention)
+- **Variables:** 74 variables
+- **Missing Data:** Present in non-critical variables
+- **Strategy:** Pairwise deletion (each test uses available data)
+
+**Use Cases:**
+
+- Statistical hypothesis testing
+- Correlation analysis
+- Chi-square tests
+- Group comparisons (t-tests, ANOVA, Mann-Whitney)
+- Regression analysis
+
+**Advantages:**
+
+- Maximizes statistical power
+- Minimizes selection bias
+- Standard practice in epidemiological research
+
+---
+
+### `processed/teds_ml_ready.csv`
+
+**Created by:** `2_data_preparation\missing_value_handling_teds_a.ipynb`  
+**Purpose:** Imputed dataset ready for machine learning models
+
+**Processing Steps:**
+
+1. **Numeric variables:** Imputed with median
+   - `years_using`, `number_of_substances`
+
+2. **Categorical variables:** Imputed with mode
+   - `wait_time_days`, `prior_treatments`, `employment_status`
+   - `education_level`, `living_arrangement`, `income_source`
+
+3. **Binary variables:** Imputed with 0 (negative/absent)
+   - All `is_*` and `has_*` flags
+
+**Characteristics:**
+
+- **Records:** ~1,625,833 (100% retention)
+- **Variables:** 50 variables
+- **Missing Data:** Imputed (no NaN values)
+- **Strategy:** Statistical imputation
+
+**Use Cases:**
+
+- Machine learning model training
+- Predictive modeling
+- Classification and regression algorithms
+- Neural networks
+- Ensemble methods
+
+**Important Notes:**
+
+- Imputation may introduce bias
+- Use with caution for inferential statistics
+- Document imputation methods in model cards
+- Consider multiple imputation for sensitivity analysis
+
+### `processed/teds_d_ml_ready.csv`
+
+**Created by:** `2_data_preparation/missing_value_handling_teds_d.ipynb`  
+**Purpose:** Imputed dataset ready for machine learning models
+
+**Processing Steps:**
+
+1. **Numeric variables:** Imputed with median
+   - `years_using`, `number_of_substances_admit`, `number_of_substances_discharge`
+
+2. **Categorical variables:** Imputed with mode
+   - `wait_time_days`, `prior_treatments`, `employment_admit`, `employment_discharge`
+   - `education_level`, `living_arrangement_admit`, `living_arrangement_discharge`
+   - `income_source`, `length_of_stay`, `discharge_reason`
+
+3. **Binary variables:** Imputed with 0 (negative/absent)
+   - All `is_*` and `has_*` flags
+   - Treatment outcomes: `completed_treatment`, `dropped_out`, `terminated`, `transferred`
+   - Stay indicators: `short_stay`, `long_stay`
+   - Improvement metrics: `employment_improved`, `housing_improved`, `arrests_reduced`
+
+4. **Remaining variables:** Imputed based on data type
+   - Categorical: mode or 'Unknown'
+   - Numeric: median or 0
+   - Includes: demographics (sex, race, ethnicity, marital_status), arrests
+data, substance details, clinical variables
+
+**Characteristics:**
+
+- **Records:** 1,474,025 (100% retention)
+- **Variables:** 74 variables
+- **Missing Data:** None (fully imputed)
+- **Strategy:** Statistical imputation (median/mode/zero-filling)
+
+**Use Cases:**
+
+- Machine learning model training
+- Predictive modeling
+- Classification and regression algorithms
+- Neural networks
+- Ensemble methods
+
+**Important Notes:**
+
+- Imputation may introduce bias
+- Use with caution for inferential statistics
+- Document imputation methods in model cards
+- Consider multiple imputation for sensitivity analysis
+
+---
+
+## Data Quality Summary
+
+| Dataset | Records | Missing Data | Data Loss | Primary Use |
+|---------|---------|--------------|-----------|-------------|
+| **Raw TEDS-A** | 1,625,833 | Yes (-9 codes) | 0% | Source data |
+| **Cleaned TEDS-A** | 1,625,833 | Yes (NaN) | 0% | EDA, visualization |
+| **Analysis Ready TEDS-A** | ~1,540,000 | Yes (non-critical) | ~5% | tests |
+| **ML Ready TEDS-A** | 1,625,833 | No (imputed) | 0% | Machine learning |
+| **Raw TEDS-D** | 1,474,025 | Yes (-9 codes) | 0% | Source data |
+| **Cleaned TEDS-D** | 1,474,025 | Yes (NaN) | 0% | EDA, visualization |
+| **Analysis Ready TEDS-D** | ~1,400,000 | Yes (non-critical) | ~5% | tests |
+| **ML Ready TEDS-D** | 1,474,025 | No (imputed) | 0% | Machine learning |
+
+---
+
+## Missing Data Patterns - TEDS-A
+
+### High Missing Variables (>20%)
+
+- `wait_time_days`: 53.7%
+- `marital_status`: 29.2%
+- `income_source`: 34.6%
+- `education_level`: 20.9%
+- `payment_source`: 53.4%
+
+### Low Missing Variables (<5%)
+
+- `patient_id`: 0%
+- `age_group`: 0%
+- `sex`: 0.1%
+- `service_type`: 0%
+- `primary_substance`: 18.2%
+
+---
+
+## Missing Data Patterns - TEDS-D
+
+### High Missing Variables (>50%)
+
+- `arrests_discharge`: 95.7%
+- `arrests_admit`: 94.2%
+- `tertiary_substance_discharge`: 84.7%
+- `tertiary_substance_admit`: 82.0%
+- `pregnant`: 67.4%
+- `health_insurance`: 58.1%
+- `payment_source`: 56.5%
+
+### Low Missing Variables (<2%)
+
+- `patient_id`: 0%
+- `age_group`: 0%
+- `sex`: 0.06%
+- `service_type_admit`: 0%
+- `discharge_reason`: 0%
+- `length_of_stay`: 0%
+
+---
+
+## Data Processing Pipeline
+
+```text
+Raw Data (tedsx_puf_2023.csv)
+    ↓
+[Data Cleaning Pipeline]
+    ↓
+Cleaned Data (teds_x_2023_cleaned.csv)
+    ↓
+[Missing Value Strategy]
+    ↓
+    ├── Analysis Ready (95% data, pairwise deletion)
+    └── ML Ready (100% data, imputation)
+```
+
+> **Note:** The TEDS-x dataset is not included in this repository due to size
+and data governance considerations.  
+> To reproduce analyses, download the dataset directly from SAMHSA TEDS Data.
+> and place it in the `1_datasets/raw/` folder.
+> x refers to A and D both.
+
+### Reproducing Results
+
+To reproduce cleaning and preprocessing:
+
+1. Download `tedsa_puf_2023.csv` and `tedsd_puf_2023.csv`
+2. Place it in `1_datasets/raw/`
+3. Run `2_data_preparation/cleaning_teds_a.ipynb`,
+`2_data_preparation/cleaning_teds_d.ipynb`
+and `2_data_preparation/missing_value_handling_teds_a.ipynb`,
+`2_data_preparation/missing_value_handling_teds_d.ipynb`.
+4. Output files will appear in `1_datasets/processed/`

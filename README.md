@@ -22,7 +22,7 @@ plan for each patient based on their unique situation.
 This project is being developed by a collaborative team:
 
 - **Caesar Ghazi** ([@CaesarGhazi](https://github.com/CaesarGhazi))
-- **Evan Cole** ([@colevandersWands](https://github.com/colevandersWands))
+- **Moe Alwathiq** ([Moe-phantom](https://github.com/Moe-phantom))
 - **Rafaa Ali** ([@RafaaAli](https://github.com/RafaaAli))
 - **Wuor Bhang** ([@WuorBhang](https://github.com/WuorBhang))
 
