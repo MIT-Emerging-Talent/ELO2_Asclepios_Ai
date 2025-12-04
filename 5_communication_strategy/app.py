@@ -1,9 +1,10 @@
 # clinical_dashboard_final.py
-import streamlit as st
+import warnings
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import warnings
+import streamlit as st
 
 warnings.filterwarnings("ignore")
 
@@ -113,7 +114,9 @@ class ClinicalDashboard:
         try:
             # Load from Google Drive path
             self.data = pd.read_csv("1_datasets/processed/teds_d_ml_ready.csv")
-            st.success(f"✅ Clinical data loaded: {self.data.shape[0]:,} patients, {self.data.shape[1]:,} variables")
+            st.success(
+                f"✅ Clinical data loaded: {self.data.shape[0]:,} patients, {self.data.shape[1]:,} variables"
+            )
 
             # Show data structure
             st.sidebar.info(
@@ -130,7 +133,9 @@ class ClinicalDashboard:
                 )
                 return True
             except FileNotFoundError:
-                st.error("❌ Processed data not found. Please ensure the file is in the correct location.")
+                st.error(
+                    "❌ Processed data not found. Please ensure the file is in the correct location."
+                )
                 return False
 
     def get_available_engineered_features(self):
@@ -139,7 +144,10 @@ class ClinicalDashboard:
 
     def create_patient_demographics(self, filtered_df):
         """Analyze patient demographics"""
-        st.markdown('<p class="section-header">👥 Patient Demographics</p>', unsafe_allow_html=True)
+        st.markdown(
+            '<p class="section-header">👥 Patient Demographics</p>',
+            unsafe_allow_html=True,
+        )
 
         col1, col2, col3, col4 = st.columns(4)
 
@@ -175,7 +183,9 @@ class ClinicalDashboard:
                     labels={"x": "Age Group", "y": "Number of Patients"},
                     color_discrete_sequence=["#2e86ab"],
                 )
-                fig.update_layout(showlegend=False, plot_bgcolor="green", paper_bgcolor="green")
+                fig.update_layout(
+                    showlegend=False, plot_bgcolor="green", paper_bgcolor="green"
+                )
                 st.plotly_chart(fig, use_container_width=True)
             elif "AGE" in filtered_df.columns:
                 fig = px.histogram(
@@ -225,7 +235,9 @@ class ClinicalDashboard:
                     color_discrete_sequence=["#3498db"],
                     text=race_counts.values,
                 )
-                fig.update_layout(plot_bgcolor="green", paper_bgcolor="green", yaxis_title="")
+                fig.update_layout(
+                    plot_bgcolor="green", paper_bgcolor="green", yaxis_title=""
+                )
                 st.plotly_chart(fig, use_container_width=True)
 
         with col2:
@@ -242,7 +254,10 @@ class ClinicalDashboard:
 
     def create_substance_use_analysis(self, filtered_df):
         """Analyze substance use patterns with enhanced visualizations"""
-        st.markdown('<p class="section-header">💊 Substance Use Patterns</p>', unsafe_allow_html=True)
+        st.markdown(
+            '<p class="section-header">💊 Substance Use Patterns</p>',
+            unsafe_allow_html=True,
+        )
 
         col1, col2, col3, col4 = st.columns(4)
 
@@ -328,7 +343,9 @@ class ClinicalDashboard:
         with col2:
             # Primary substance distribution with better colors
             if "primary_substance" in filtered_df.columns:
-                substance_counts = filtered_df["primary_substance"].value_counts().head(8)
+                substance_counts = (
+                    filtered_df["primary_substance"].value_counts().head(8)
+                )
                 fig = px.pie(
                     values=substance_counts.values,
                     names=substance_counts.index,
@@ -351,8 +368,17 @@ class ClinicalDashboard:
 
         # Substance flags analysis with better visualization
         st.subheader("Substance Use Prevalence by Type")
-        substance_flags = ["ALCFLG", "COKEFLG", "MARFLG", "HERFLG", "METHFLG", "OPSYNFLG"]
-        available_flags = [flag for flag in substance_flags if flag in filtered_df.columns]
+        substance_flags = [
+            "ALCFLG",
+            "COKEFLG",
+            "MARFLG",
+            "HERFLG",
+            "METHFLG",
+            "OPSYNFLG",
+        ]
+        available_flags = [
+            flag for flag in substance_flags if flag in filtered_df.columns
+        ]
 
         if available_flags:
             flag_prevalence = {}
@@ -388,16 +414,24 @@ class ClinicalDashboard:
             st.plotly_chart(fig, use_container_width=True)
 
         # Substance by demographics
-        if "primary_substance" in filtered_df.columns and "age_group" in filtered_df.columns:
+        if (
+            "primary_substance" in filtered_df.columns
+            and "age_group" in filtered_df.columns
+        ):
             st.subheader("Substance Use Patterns by Age Group")
-            pivot_data = pd.crosstab(
-                filtered_df["age_group"],
-                filtered_df["primary_substance"],
-                normalize="index",
-            ) * 100
+            pivot_data = (
+                pd.crosstab(
+                    filtered_df["age_group"],
+                    filtered_df["primary_substance"],
+                    normalize="index",
+                )
+                * 100
+            )
 
             # Get top 5 substances
-            top_substances = filtered_df["primary_substance"].value_counts().head(5).index
+            top_substances = (
+                filtered_df["primary_substance"].value_counts().head(5).index
+            )
             pivot_top = pivot_data[top_substances]
 
             fig = px.imshow(
@@ -419,13 +453,18 @@ class ClinicalDashboard:
 
     def create_clinical_complexity_analysis(self, filtered_df):
         """Analyze clinical complexity with enhanced visualizations"""
-        st.markdown('<p class="section-header">🏥 Clinical Complexity Analysis</p>', unsafe_allow_html=True)
+        st.markdown(
+            '<p class="section-header">🏥 Clinical Complexity Analysis</p>',
+            unsafe_allow_html=True,
+        )
 
         col1, col2, col3, col4 = st.columns(4)
 
         # Calculate actual metrics
         mental_health_rate = 43.3  # From your data
-        avg_complexity = 0.0  # From your data - Note: This seems low, might need recalculation
+        avg_complexity = (
+            0.0  # From your data - Note: This seems low, might need recalculation
+        )
 
         with col1:
             st.metric("Average Complexity Score", f"{avg_complexity:.1f}")
@@ -477,19 +516,27 @@ class ClinicalDashboard:
             # Complexity drivers with better visualization
             drivers = {}
             if "has_mental_health_disorder" in filtered_df.columns:
-                drivers["Mental Health"] = filtered_df["has_mental_health_disorder"].mean() * 100
+                drivers["Mental Health"] = (
+                    filtered_df["has_mental_health_disorder"].mean() * 100
+                )
 
             if "is_polysubstance" in filtered_df.columns:
-                drivers["Polysubstance Use"] = filtered_df["is_polysubstance"].mean() * 100
+                drivers["Polysubstance Use"] = (
+                    filtered_df["is_polysubstance"].mean() * 100
+                )
 
             if "is_homeless" in filtered_df.columns:
                 drivers["Homelessness"] = filtered_df["is_homeless"].mean() * 100
 
             if "is_injection_user" in filtered_df.columns:
-                drivers["Injection Drug Use"] = filtered_df["is_injection_user"].mean() * 100
+                drivers["Injection Drug Use"] = (
+                    filtered_df["is_injection_user"].mean() * 100
+                )
 
             if "has_criminal_justice_involvement" in filtered_df.columns:
-                drivers["Criminal Justice"] = filtered_df["has_criminal_justice_involvement"].mean() * 100
+                drivers["Criminal Justice"] = (
+                    filtered_df["has_criminal_justice_involvement"].mean() * 100
+                )
 
             if drivers:
                 driver_df = pd.DataFrame(
@@ -630,13 +677,17 @@ class ClinicalDashboard:
         if "service_type" in filtered_df.columns:
             st.subheader("Treatment Outcomes by Service Type")
 
-            outcome_by_service = filtered_df.groupby("service_type").agg(
-                {
-                    "completed_treatment": "mean",
-                    "complexity_score": "mean",
-                    "LOS": "mean",
-                }
-            ).round(3)
+            outcome_by_service = (
+                filtered_df.groupby("service_type")
+                .agg(
+                    {
+                        "completed_treatment": "mean",
+                        "complexity_score": "mean",
+                        "LOS": "mean",
+                    }
+                )
+                .round(3)
+            )
 
             # Create dual axis chart
             fig = go.Figure()
@@ -690,7 +741,10 @@ class ClinicalDashboard:
 
     def create_high_risk_identification(self, filtered_df):
         """Identify high-risk patients"""
-        st.markdown('<p class="section-header">🎯 High-Risk Patient Identification</p>', unsafe_allow_html=True)
+        st.markdown(
+            '<p class="section-header">🎯 High-Risk Patient Identification</p>',
+            unsafe_allow_html=True,
+        )
 
         if "complexity_score" not in filtered_df.columns:
             st.warning("Complexity score not available for risk assessment")
@@ -704,7 +758,9 @@ class ClinicalDashboard:
         }
 
         risk_counts = {
-            "Very High Risk": (filtered_df["complexity_score"] >= risk_thresholds["Very High Risk"]).sum(),
+            "Very High Risk": (
+                filtered_df["complexity_score"] >= risk_thresholds["Very High Risk"]
+            ).sum(),
             "High Risk": (
                 (filtered_df["complexity_score"] >= risk_thresholds["High Risk"])
                 & (filtered_df["complexity_score"] < risk_thresholds["Very High Risk"])
@@ -713,7 +769,9 @@ class ClinicalDashboard:
                 (filtered_df["complexity_score"] >= risk_thresholds["Moderate Risk"])
                 & (filtered_df["complexity_score"] < risk_thresholds["High Risk"])
             ).sum(),
-            "Low Risk": (filtered_df["complexity_score"] < risk_thresholds["Moderate Risk"]).sum(),
+            "Low Risk": (
+                filtered_df["complexity_score"] < risk_thresholds["Moderate Risk"]
+            ).sum(),
         }
 
         col1, col2, col3, col4 = st.columns(4)
@@ -722,25 +780,25 @@ class ClinicalDashboard:
             st.metric(
                 "Very High Risk",
                 f"{risk_counts['Very High Risk']:,}",
-                f"{(risk_counts['Very High Risk']/len(filtered_df))*100:.1f}%",
+                f"{(risk_counts['Very High Risk'] / len(filtered_df)) * 100:.1f}%",
             )
         with col2:
             st.metric(
                 "High Risk",
                 f"{risk_counts['High Risk']:,}",
-                f"{(risk_counts['High Risk']/len(filtered_df))*100:.1f}%",
+                f"{(risk_counts['High Risk'] / len(filtered_df)) * 100:.1f}%",
             )
         with col3:
             st.metric(
                 "Moderate Risk",
                 f"{risk_counts['Moderate Risk']:,}",
-                f"{(risk_counts['Moderate Risk']/len(filtered_df))*100:.1f}%",
+                f"{(risk_counts['Moderate Risk'] / len(filtered_df)) * 100:.1f}%",
             )
         with col4:
             st.metric(
                 "Low Risk",
                 f"{risk_counts['Low Risk']:,}",
-                f"{(risk_counts['Low Risk']/len(filtered_df))*100:.1f}%",
+                f"{(risk_counts['Low Risk'] / len(filtered_df)) * 100:.1f}%",
             )
 
         # Risk distribution pie chart
@@ -768,7 +826,10 @@ class ClinicalDashboard:
 
     def create_clinical_recommendations(self, filtered_df):
         """Generate clinical recommendations with better formatting"""
-        st.markdown('<p class="section-header">💡 Clinical Recommendations & Insights</p>', unsafe_allow_html=True)
+        st.markdown(
+            '<p class="section-header">💡 Clinical Recommendations & Insights</p>',
+            unsafe_allow_html=True,
+        )
 
         # Calculate key metrics from your data
         mental_health_rate = 43.3
@@ -846,7 +907,10 @@ def main():
     dashboard = ClinicalDashboard()
 
     # Header
-    st.markdown('<p class="main-header">🏥 TEDS Clinical Intelligence Dashboard</p>', unsafe_allow_html=True)
+    st.markdown(
+        '<p class="main-header">🏥 TEDS Clinical Intelligence Dashboard</p>',
+        unsafe_allow_html=True,
+    )
     st.markdown("**Data-Driven Insights for Substance Use Treatment Optimization**")
 
     # Load data
@@ -864,14 +928,18 @@ def main():
     # Age group filter
     if "age_group" in dashboard.data.columns:
         age_groups = sorted(dashboard.data["age_group"].unique())
-        selected_ages = st.sidebar.multiselect("Age Groups", options=age_groups, default=age_groups)
+        selected_ages = st.sidebar.multiselect(
+            "Age Groups", options=age_groups, default=age_groups
+        )
     else:
         selected_ages = []
 
     # Gender filter
     if "sex" in dashboard.data.columns:
         genders = sorted(dashboard.data["sex"].unique())
-        selected_genders = st.sidebar.multiselect("Gender", options=genders, default=genders)
+        selected_genders = st.sidebar.multiselect(
+            "Gender", options=genders, default=genders
+        )
     else:
         selected_genders = []
 
@@ -911,7 +979,9 @@ def main():
         ]
 
     if selected_substances:
-        filtered_data = filtered_data[filtered_data["primary_substance"].isin(selected_substances)]
+        filtered_data = filtered_data[
+            filtered_data["primary_substance"].isin(selected_substances)
+        ]
 
     # Key metrics header with your actual data
     st.markdown("---")
