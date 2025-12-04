@@ -5,16 +5,8 @@ venv/
 *.db
 *.idea
 *.ruff_cache
-# Ignore large or private files
-1_datasets/raw/*
-1_datasets/processed/*
-*.zip
-*.sav
-*.dta
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-__pycache__/
-# Ignore specific file teds a ml ready
-.C:\Users\nobody\OneDrive\Desktop\VSCODE 25\SUD\SUD repo\ELO2_Asclepios_Ai\1_datasets\raw\teds_ml_ready.csv
+#raw data
+.1_datasets/raw/tedsd_puf_2023.csv
+# processed data
+.1_datasets/processed/tedsd_ml_clean.csv
+.1_datasets/processed/tedsd_engineered_features.csv
