@@ -68,3 +68,186 @@ days), proving it relies on clinical factors, not geography.
   Predicting the Mean results in unrealistic recommendations. Predicting the
   Median ensures robust, clinically standard suggestions.
 - **Performance:** MAE 6.1 Days (Precision window of +/- 1 week).
+
+---
+
+## Resource Demand Forecasting Model
+
+This system is a predictive modeling pipeline designed to estimate
+**treatment admissions**, **bed capacity**, **workforce requirements**, and
+**clinical complexity** at the facility level.
+It applies machine learning to aggregated TEDS patient data.
+
+The model transforms raw episode-level treatment records into a structured,
+decision-ready planning tool capable of predicting demand across multiple
+treatment modalities, including:
+
+- Detox 24-hour residential
+- Short-term rehab
+- Long-term rehab
+- Intensive outpatient
+- Non-intensive outpatient
+
+---
+
+## Methodology
+
+### **1. Turning Patient-Level Episodes into Facility-Level Intelligence**
+
+We engineered an **aggregation architecture** that transforms millions of
+individual encounters into facility-type level population statistics. We computed:
+
+- Total admissions (episode count)
+- Average demographic distributions
+- Average clinical-severity indicators
+- Facility-level prevalence rates (e.g., % polysubstance use, % homeless,
+% injection users)
+
+By computing **means on one-hot encoded demographic fields**, the system
+creates interpretable, population-level indicators.
+Example:
+`sex_Female = 0.42` to 42% of the facility’s patients are female.
+
+This process allows the model to see patient composition instead of individual outliers.
+
+---
+
+### **2. Constructing the Facility Complexity Score**
+
+We built a synthetic **Complexity Score**, representing clinical and
+social risk intensity. It is a weighted combination of high-impact risk factors:
+
+- Polysubstance use
+- Chronic treatment history
+- Co-occurring mental health disorder
+- Homelessness
+- Injection drug use
+
+This score is later used not only for prediction but also for
+**adjusting staffing needs**, because complex patients need more staff
+per admission than low-acuity ones.
+
+---
+
+### **3. Training Pipeline (True Production Simulation)**
+
+We built a **strict leakage-prevention pipeline**:
+
+- Train/test split applied *before* imputation
+- Imputer fit only on training data
+- Scaler fit only on training data
+- Log-transform applied to the target to reduce extreme skew
+
+This ensures that the performance metrics reflect true real-world behavior.
+
+---
+
+### **4. The Model Framework (Multi-Algorithm Evaluation)**
+
+A three-model ensemble evaluation was performed:
+
+- **Ridge Regression** (linear, baseline)
+- **Random Forest Regressor** (non-linear)
+- **Gradient Boosting Regressor** (final winner)
+
+#### Why Gradient Boosting Won
+
+- Handles mixed-scale features effectively
+- Robust against moderate noise
+- Excellent for skewed target variables
+- Achieved **R² = 0.623** on held-out test data
+- Mean Absolute Error reduced to **≈ 3,000 admissions**
+
+Cross-validation score:
+**0.799 R² ± 0.048**, indicating strong generalization.
+
+---
+
+### **5. Full-Data Production Engine with Bias Correction**
+
+Because Regression models trained on log-transformed targets tend to
+underpredict population totals when transformed back to the original
+scale (exp bias) the pipeline computes a **Bias Correction Factor**:
+
+```text
+Correction = Sum(actual) / Sum(predicted)
+≈ 1.0014
+```
+
+This ensures that total predicted admissions match real-world
+aggregate demand—critical for policy-level forecasting.
+
+---
+
+### **6. Translating Predictions Into Real Resource Requirements**
+
+Predicted admissions alone don’t solve staffing or capacity questions.
+We translate model outputs into **operational planning metrics**:
+
+#### Beds Required
+
+```text
+1 bed per 12 annual admissions  
+```
+
+This reflects average turnover and realistic occupancy levels.
+
+#### Staff Required
+
+```text
+1 staff per 50 admissions
+Adjusted upward based on the facility’s Complexity Score
+```
+
+Facilities with severe populations require proportionally more clinical support.
+
+#### High-Demand Flag
+
+Facilities above median predicted admissions are labeled high-priority for:
+
+- Funding
+- Workforce allocation
+- Surge planning
+
+---
+
+## The Predictive Architecture
+
+### **Model: Facility Admission Forecaster (Primary Engine)**
+
+- **Algorithm:** Gradient Boosting Regressor
+- **Target:** Log-transformed annual admissions
+- **Inputs:**
+
+  - Demographic prevalence vectors
+  - Clinical risk indicators
+  - Social determinants
+  - Complexity score
+  - Treatment modality and geography indicators
+
+### Key Predictive Signals (Feature Importance)
+
+Top drivers include:
+
+- Race/ethnicity prevalence patterns
+- Age cohort distributions
+- Education level indicators
+- Service type
+- Risk cluster prevalence
+
+These patterns reveal that admissions are driven by **population composition**,
+not just sheer size or location.
+
+---
+
+## Outputs & Deliverables
+
+The final dataset includes:
+
+- **Predicted Admissions**
+- **Recommended Beds**
+- **Recommended Staff (complexity-adjusted)**
+- **Complexity Score**
+- **High Demand Flag**
+- **Top High-Demand Facilities Report**
+- **Full Visualization Dashboard**
