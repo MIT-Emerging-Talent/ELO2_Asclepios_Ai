@@ -1,11 +1,43 @@
-# Asclepios AI: Optimizing Substance Use Disorder Treatment
+# **Asclepios AI: Data-Driven Treatment Optimization for Substance Use Disorder (SUD)**
 
-Welcome to the Asclepios AI project! This repository contains all the work
-done by our team to develop an AI-powered platform that helps substance use
-disorder (SUD) treatment facilities optimize patient care and resource
-allocation.
+Asclepios AI is a data-driven exploration into how machine learning,
+domain knowledge, and thoughtful analysis can help improve outcomes for
+individuals undergoing Substance Use Disorder (SUD) treatment. Using real
+admissions and treatment episode data, our goal is to identify patterns
+that can help facilities personalize treatment duration, improve completion
+rates, and reduce relapse/readmission.
 
-## 🌟 What We're Building
+## Our Team
+
+This project is being developed by a collaborative team:
+
+- **Caesar Ghazi** ([@CaesarGhazi](https://github.com/CaesarGhazi))
+- **Moe Alwathiq** ([Moe-phantom](https://github.com/Moe-phantom))
+- **Rafaa Ali** ([@RafaaAli](https://github.com/RafaaAli))
+- **Wuor Bhang** ([@WuorBhang](https://github.com/WuorBhang))
+
+## **Primary Research Question**
+
+How accurately can patient demographics, history, and treatment factors
+predict an optimal treatment duration that minimizes relapse risk in Substance
+Use Disorder treatment?
+
+## Problem Statement
+
+Despite the critical importance of completing adequate treatment for
+sustained recovery, SUD facilities lack systematic approaches to personalizing
+treatment length based on patient characteristics and predicted outcomes.
+Approximately **30% of patients are readmitted within one year**, suggesting
+many individuals either receive insufficient treatment or discontinue prematurely.
+
+At the same time, treatment facilities struggle with capacity planning. They
+often cannot effectively match the timing and volume of new admissions with
+available beds and staff. This mismatch leads to under-used treatment slots,
+prolonged waitlists, and reduced access to care.
+
+Asclepios AI aims to use data-driven insights to address these challenges.
+
+## What We're Building
 
 We're creating a smart system that helps treatment centers:
 
@@ -17,16 +49,7 @@ Think of it like a personalized recommendation system - just like how Netflix
 recommends movies you might like, our system recommends the optimal treatment
 plan for each patient based on their unique situation.
 
-## 👥 Our Team
-
-This project is being developed by a collaborative team:
-
-- **Caesar Ghazi** ([@CaesarGhazi](https://github.com/CaesarGhazi))
-- **Moe Alwathiq** ([Moe-phantom](https://github.com/Moe-phantom))
-- **Rafaa Ali** ([@RafaaAli](https://github.com/RafaaAli))
-- **Wuor Bhang** ([@WuorBhang](https://github.com/WuorBhang))
-
-## 🎯 Why This Matters
+## Why This Matters
 
 Substance use disorders affect millions of people worldwide and cost society
 billions of dollars each year. Unfortunately:
@@ -39,61 +62,129 @@ billions of dollars each year. Unfortunately:
 Our AI system aims to solve these problems by using data to make better
 predictions about what each patient needs.
 
-## 📁 Repository Structure
+## Data Overview
 
-Our work is organized in a step-by-step approach:
+We use publicly available SUD admissions and treatment episode datasets,
+which include variables such as:
 
-```/
-├── 0_domain_study/            # Research about SUD treatment and AI applications
-├── 1_datasets/                # The data we're using to train our AI models
-├── 2_data_preparation/        # Cleaning and organizing the data
-├── 3_data_exploration/        # Understanding patterns in the data
-├── 4_data_analysis/           # Building and testing our AI models
-├── 5_communication_strategy/  # How we'll share our findings with others
-├── 6_final_presentation/      # Our final presentation materials
-└── collaboration/             # Team agreements, schedules, and reflections
+- Patient demographics
+- Substance use patterns
+- Co-occurring issues
+- Treatment history
+- Treatment length
+- Completion status
+- Readmission / relapse factors
 
-```
+### Repository Data Folders
 
-## 📊 Data Sources
-
-We're using publicly available datasets from reputable sources:
-
-- **Treatment Episode Data Set (TEDS)**: Information about admissions to
-  substance abuse treatment facilities
-- **National Survey on Drug Use and Health (NSDUH)**: Annual survey data about
-  drug use and mental health in the U.S.
-
-All data is handled ethically and with respect for patient privacy.
-
-## 🚀 How to Use This Repository
-
-If you're interested in our work, you can:
-
-1. **Explore our research** in the [0_domain_study](./0_domain_study/) folder
-2. **See our data** in the [1_datasets](./1_datasets/) folder
-3. **Learn about our approach** by reading the README files in each folder
-4. **Follow our progress** through our collaboration documents
-
-Each folder contains a README.md file that explains what's in that section in
-plain language.
-
-## 🤝 Want to Contribute?
-
-While this is primarily a student project, we welcome feedback and
-suggestions! Feel free to:
-
-- Open an issue if you have questions or ideas
-- Fork the repository to experiment with our approach
-- Contact any of our team members with questions
-
-## 📚 Learn More
-
-- Read about our research approach in [0_domain_study/README.md](./0_domain_study/README.md)
-- See what datasets we're using in [1_datasets/README.md](./1_datasets/README.md)
-- Check out our team agreements in the [collaboration](./collaboration/) folder
+- 📁 **Raw Data:** [`1_datasets/raw/`](./1_datasets/raw/)
+- 📁 **Processed Data:** [`1_datasets/processed/`](./1_datasets/processed/)
+- 📁 **Sample Data:** [`1_datasets/sample/`](./1_datasets/sample/)
+- 📄 **Data Documentation:** [`1_datasets/README.md`](./1_datasets/README.md)
 
 ---
 
-*This project is part of the Emerging Talent 6 Collaborative Data Science
-Project*
+## Data Preparation
+
+This step includes:
+
+- Cleaning and formatting raw datasets
+- Handling missing or inconsistent data
+- Encoding categorical variables
+- Normalizing and transforming features
+- Structuring datasets for modeling
+
+📁 Folder:
+ **[`2_data_preparation/`](./2_data_preparation/)**
+
+---
+
+## Exploratory Data Analysis (EDA)
+
+We explore:
+
+- Relationships between treatment factors and outcomes
+- Duration patterns across substance types
+- Demographic and behavioral trends
+- Variables most correlated with relapse or completion
+- Facility-level patterns affecting patient success
+
+📁 Folder:
+ **[`3_data_exploration/`](./3_data_exploration/)**
+
+---
+
+## Modeling & Analysis
+
+We will build models to:
+
+- Predict relapse likelihood
+- Identify high-risk patients
+- Predict facility resource demand
+- Evaluate model fairness and robustness
+
+Analysis includes:
+
+- Feature engineering
+- Training and validation
+- Model comparison
+- Interpretability
+
+📁 Folder:
+ **[`4_data_analysis/`](./4_data_analysis/)**
+
+---
+
+## Communicating Results
+
+Our communication will include:
+
+- Insight summaries
+- Visual dashboards or graphs
+- Interpretations for clinicians and decision-makers
+- Recommendations based on model findings
+- Limitations and ethical considerations
+
+📁 Folder:
+ **[`5_communication_strategy/`](./5_communication_strategy/)**
+
+---
+
+## Final Presentation
+
+Our final deliverables will recap the entire analysis with:
+
+- A structured summary of findings
+- Visualizations
+- Model results
+- Recommendations for treatment facilities
+- Reflections and next steps
+
+📁 Folder:
+ **[`6_final_presentation/`](./6_final_presentation/)**
+
+---
+
+## Repository Structure
+
+Below is the full layout of the project repository:
+
+```text
+Asclepios_Ai/
+│
+├── 0_domain_study/
+├── 1_datasets/
+│   ├── processed/
+│   ├── sample/
+│   └── raw/
+├── 2_data_preparation/
+├── 3_data_exploration/
+├── 4_data_analysis/
+├── 5_communication_strategy/
+└── 6_final_presentation/
+```
+
+### License
+
+This project is licensed under the **MIT License**.
+📄 [View License](./LICENSE)
