@@ -1,6 +1,6 @@
 # Data Analysis
 
- Asclepios AI: Predictive Core & Twin-Engine Architecture
+ Asclepios AI: Predictive Core and Twin-Engine Architecture
 
 - **Readmission Risk Engine:** Identifies patients with "Chronic Relapse"
   phenotypes.
