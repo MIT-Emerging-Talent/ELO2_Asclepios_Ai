@@ -666,6 +666,8 @@ class ClinicalDashboard:
         )
 
         # Calculate key metrics
+        total_patients = len(filtered_df)
+
         complexity_avg = (
             filtered_df["complexity_score"].mean()
             if "complexity_score" in filtered_df.columns
@@ -884,7 +886,7 @@ def main():
             """
         <div class="success-box">
         <h4>Welcome to the Clinical Intelligence Dashboard</h4>
-        <p>This dashboard provides data-driven insights to support clinical decision-making,
+        <p>This dashboard provides data-driven insights to support clinical decision-making, 
         resource allocation, and treatment optimization for substance use disorders.</p>
         <p><strong>Key Features Available:</strong></p>
         <ul>
