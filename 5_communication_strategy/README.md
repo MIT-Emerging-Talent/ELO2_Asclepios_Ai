@@ -138,7 +138,6 @@ Main interactive page:
 ***displays analytic charts or model information***
 [![Screenshot-from-2025-12-08-20-22-37.png](https://i.postimg.cc/4dc6f6HD/Screenshot-from-2025-12-08-20-22-37.png)](https://postimg.cc/ph2hknZC)
 
-
 ### 📚 About
 
 Project description and usage details.
