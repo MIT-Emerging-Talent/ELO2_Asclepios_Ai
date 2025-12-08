@@ -2,13 +2,11 @@
 
 TEDS-A Sample Data Exploration
 
-This repository contains a sample of the Treatment Episode Admissions Data Set (TEDS-A)
-used for exploratory data analysis.
+This repository contains a sample of the Treatment Episode Admissions AND
+Discharge Data Sets (TEDS-A and TEDS-D) used for exploratory data analysis,
+used for demonstration and research purposes only.
 
-The dataset includes 1,000 rows and 50 columns, representing a subset of the
-broader TEDS data used for demonstration and research purposes only.
-
-Exploration & Analysis
+## TEDS-A Exploration & Analysis
 
 ## 1. Demographic & Background Exploration
 
@@ -210,9 +208,9 @@ Key Takeaways
 - Access pathways: Self-referral (38.1%) and criminal justice (20.5%)
   are primary entry points
 
-## Discharge Data Analysis
+## TEDS-D EXPLORATION AND ANALYSIS
 
-### 7. Demographic & Background Exploration
+### 1. Demographic & Background Exploration
 
 The dataset shows distinct patterns in the population entering and leaving treatment.
 
@@ -252,8 +250,11 @@ Conclusion: Single individuals (Never Married) represent more than
 Conclusion: Single individuals (Never Married) represent more
 than half of the treatment population, indicating lower social
 support structures compared to married individuals.
+<https://i.postimg.cc/wM9XpH75/1-age-disturbution.png>
+<https://i.postimg.cc/cCdRSZrF/2-sex-distribution.png>
+<https://i.postimg.cc/Y0t6HkhR/3-marital-status.png>
 
-### 8. Substance Use Patterns
+### 2. Substance Use Patterns
 
 Primary Substance:
 
@@ -280,30 +281,21 @@ Conclusion: Alcohol remains the single most common substance
 nearly 26% of all discharges, representing a significant burden on
 the system.
 
+<https://i.postimg.cc/HnTwgHV3/5-route.png>
+
+<https://i.postimg.cc/wM9XpH7W/4-top-15-primary-substance.png>
+
 ### 3. Treatment History & Referral Sources
 
-Conclusion: Over 60% of patients have at least one prior
-treatment episode, reinforcing the chronic, relapsing nature of
-Prior Treatment Episodes:
-
-### 9. Treatment History & Referral Sources
-
-Conclusion: Over 60% of patients have at least one prior
+Over 60% of patients have at least one prior
 treatment episode, reinforcing the chronic, relapsing nature of
 the condition.
 
 Prior Treatment Episodes:
 5+ Prior Episodes: ~15.0%
 
-Conclusion: Over 60% of patients have at least one prior treatment
-episode, reinforcing the chronic, relapsing nature of the condition.
+<https://i.postimg.cc/90cdhVrn/9-prior-treatment.png>
 
-### 4. Service Types & Length of Stay (LOS)
-
-Individual/Self: ~35-40% (Primary voluntary source)
-
-### 10. Service Types & Length of Stay (LOS)
-  
 Referral Sources:
 
 Individual/Self: ~35-40% (Primary voluntary source)
@@ -311,19 +303,17 @@ Individual/Self: ~35-40% (Primary voluntary source)
 Criminal Justice/DUI: ~30-35% (Primary mandatory source)
 
 Community/Social Services: ~10-15%
+<https://i.postimg.cc/Fzhy4m72/7-referral-sources.png>
 
+### 4. Service Types & Length of Stay (LOS)
+
+Most of the treatments are short-term resedantial  80%
 Service Type Distribution:
-Detox (24hr Residential): ~20%
+Detox (24hr Residential): ~10%
 
 Rehab/Residential: ~15%
 
-### 5. Employment Patterns (Admission vs. Discharge)
-
-Residential: Median stay 30–90 days.
-
-Conclusion: Employment rates show minimal improvement between
-
-### 11. Employment Patterns (Admission vs. Discharge)
+<https://i.postimg.cc/1XyGQPf2/6-service-types-distribution.png>
 
 Length of Stay:
 
@@ -333,11 +323,10 @@ Residential: Median stay 30–90 days.
 
 The analysis compares economic stability between the start and
 end of treatment.
-Employed (Full/Part-time): ~22%
 
-Conclusion: Employment rates show minimal improvement between
-admission and discharge, suggesting that treatment engagement alone
-does not immediately resolve economic barriers.
+<https://i.postimg.cc/mkVQZqHK/13-LOS.png>
+
+### 5. Employment Patterns (Admission vs. Discharge)
 
 Employed (Full/Part-time): ~22%
 
@@ -345,7 +334,9 @@ Conclusion: Employment rates show minimal improvement between
 admission and discharge, suggesting that treatment engagement
 alone does not immediately resolve economic barriers.
 
-### 12. Discharge Outcomes & Mental Health
+<https://i.postimg.cc/Vv4jsTCD/10-emploiment-status.png>
+
+### 6. Discharge Outcomes & Mental Health
 
 Co-occurring Disorders: Approximately 45-50% of patients have
 a diagnosed mental health problem.
@@ -377,3 +368,7 @@ Opioids represent the most severe chronic cases (high prior episodes).
 Vulnerable Populations: Young adults (25-34), unemployed individuals,
 and those with prior treatment history are the most "at-risk" demographic
 groups in the dataset.
+
+<https://i.postimg.cc/6qzd6SvD/14-AGE-VS-primary-sub.png>
+
+<https://i.postimg.cc/QCSpNP7r/15-last-one.png>
