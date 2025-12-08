@@ -136,7 +136,7 @@ Main interactive page:
 ### 📊 Model Insights
 
 ***displays analytic charts or model information***
-<img width="1850" height="847" alt="image" src="https://github.com/user-attachments/assets/851e52f6-9b68-42e0-880c-a46cc388f3cb" />
+[![Screenshot-from-2025-12-08-20-22-37.png](https://i.postimg.cc/4dc6f6HD/Screenshot-from-2025-12-08-20-22-37.png)](https://postimg.cc/ph2hknZC)
 
 
 ### 📚 About
