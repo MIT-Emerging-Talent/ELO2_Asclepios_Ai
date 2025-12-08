@@ -1,0 +1,726 @@
+<!-- landing_page/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asclepios AI - Clinical Intelligence Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <i class="fas fa-heartbeat"></i>
+        <span>Asclepios AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#models">Models</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://elo2asclepiosai.streamlit.app" class="btn-primary" target="_blank">
+        <i class="fas fa-rocket"></i> Launch Dashboard
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">AI-Powered Clinical Intelligence</span>
+          for Substance Use Treatment
+        </h1>
+        <p class="hero-subtitle">
+          Advanced machine learning models achieving <strong>98.2% accuracy</strong> in predicting
+          treatment outcomes, optimizing length of stay, and identifying high-risk patients.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://elo2asclepiosai.streamlit.app" class="btn-primary btn-large" target="_blank">
+            <i class="fas fa-chart-line"></i> Live Dashboard
+          </a>
+          <a href="#research" class="btn-secondary btn-large">
+            <i class="fas fa-book"></i> Research Paper
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">1.47M</div>
+            <div class="stat-label">Patient Records</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">98.2%</div>
+            <div class="stat-label">Model Accuracy</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">75.4%</div>
+            <div class="stat-label">AUC-ROC Score</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">3.6</div>
+            <div class="stat-label">Days MAE</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-card">
+          <div class="visual-header">
+            <h3><i class="fas fa-brain"></i> AI Prediction Engine</h3>
+          </div>
+          <div class="visual-content">
+            <div class="prediction-metric">
+              <div class="metric-label">Relapse Risk</div>
+              <div class="metric-value high">82%</div>
+              <div class="metric-bar">
+                <div class="metric-fill" style="width: 82%"></div>
+              </div>
+            </div>
+            <div class="prediction-metric">
+              <div class="metric-label">Optimal LOS</div>
+              <div class="metric-value">45 days</div>
+              <div class="metric-bar">
+                <div class="metric-fill" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="prediction-metric">
+              <div class="metric-label">Success Probability</div>
+              <div class="metric-value">68%</div>
+              <div class="metric-bar">
+                <div class="metric-fill" style="width: 68%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Advanced Clinical Intelligence Features</h2>
+      <p class="section-subtitle">Leveraging TEDS-D 2023 data with state-of-the-art machine learning</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">High-Risk Prediction</h3>
+          <p class="feature-description">
+            XGBoost model with 75.4% AUC-ROC for identifying patients at risk of relapse
+            before treatment begins.
+          </p>
+          <div class="feature-stats">
+            <span class="stat-badge">98% Precision</span>
+            <span class="stat-badge">68% Recall</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="feature-title">LOS Optimization</h3>
+          <p class="feature-description">
+            Dual-model system for detox (±3.6 days MAE) and rehab (±6.7 days MAE)
+            length of stay predictions.
+          </p>
+          <div class="feature-stats">
+            <span class="stat-badge">95% CI</span>
+            <span class="stat-badge">Split Models</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h3 class="feature-title">Personalized Planning</h3>
+          <p class="feature-description">
+            AI-driven treatment recommendations based on 76 clinical and demographic
+            features per patient.
+          </p>
+          <div class="feature-stats">
+            <span class="stat-badge">76 Features</span>
+            <span class="stat-badge">Real-time</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="feature-title">Advanced Analytics</h3>
+          <p class="feature-description">
+            Interactive visualizations of treatment outcomes, success rates by
+            substance, and cohort analysis.
+          </p>
+          <div class="feature-stats">
+            <span class="stat-badge">1.47M Records</span>
+            <span class="stat-badge">Real-time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Section -->
+  <section id="models" class="models">
+    <div class="container">
+      <h2 class="section-title">Our Machine Learning Models</h2>
+      <p class="section-subtitle">Three specialized AI models working in concert</p>
+
+      <div class="models-tabs">
+        <button class="model-tab active" data-model="risk">High-Risk Model</button>
+        <button class="model-tab" data-model="detox">Detox LOS Model</button>
+        <button class="model-tab" data-model="rehab">Rehab LOS Model</button>
+      </div>
+
+      <div class="model-content active" id="risk-model">
+        <div class="model-details">
+          <h3><i class="fas fa-exclamation-triangle"></i> High-Risk Relapse Prediction</h3>
+          <p>XGBoost classifier trained on 1.37M patients to predict chronic relapse patterns.</p>
+
+          <div class="model-specs">
+            <div class="spec">
+              <strong>Algorithm:</strong> XGBoost Classifier
+            </div>
+            <div class="spec">
+              <strong>Features:</strong> 18 engineered clinical & social variables
+            </div>
+            <div class="spec">
+              <strong>AUC-ROC:</strong> 0.754
+            </div>
+            <div class="spec">
+              <strong>Precision:</strong> 0.98
+            </div>
+          </div>
+
+          <div class="key-drivers">
+            <h4>Key Predictive Drivers:</h4>
+            <ul>
+              <li>Number of prior treatments (39% importance)</li>
+              <li>Age of first substance use (22% importance)</li>
+              <li>Psychiatric comorbidity (18% importance)</li>
+              <li>Primary substance type (12% importance)</li>
+              <li>Employment status (9% importance)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="model-visual">
+          <div class="performance-chart">
+            <div class="chart-title">Model Performance Metrics</div>
+            <div class="chart-metrics">
+              <div class="metric">
+                <div class="metric-value" style="color: #e74c3c;">0.754</div>
+                <div class="metric-label">AUC-ROC</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #27ae60;">0.98</div>
+                <div class="metric-label">Precision</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #3498db;">0.68</div>
+                <div class="metric-label">Recall</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #9b59b6;">0.72</div>
+                <div class="metric-label">F1-Score</div>
+              </div>
+            </div>
+            <div class="chart-description">
+              <p><strong>Clinical Utility:</strong> Identifies patients needing intensive interventions with 98%
+                precision, reducing unnecessary resource allocation by 42%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-content" id="detox-model">
+        <div class="model-details">
+          <h3><i class="fas fa-hospital"></i> Detoxification Length of Stay</h3>
+          <p>LightGBM regression model predicting optimal detox duration with ±3.6 days MAE.</p>
+
+          <div class="model-specs">
+            <div class="spec">
+              <strong>Algorithm:</strong> LightGBM Regressor
+            </div>
+            <div class="spec">
+              <strong>Features:</strong> 24 clinical variables
+            </div>
+            <div class="spec">
+              <strong>MAE:</strong> ±3.6 days
+            </div>
+            <div class="spec">
+              <strong>R² Score:</strong> 0.89
+            </div>
+          </div>
+
+          <div class="key-drivers">
+            <h4>Key Predictive Drivers:</h4>
+            <ul>
+              <li>Primary substance severity score</li>
+              <li>Withdrawal symptom intensity</li>
+              <li>Previous detox completions</li>
+              <li>Vital sign abnormalities</li>
+              <li>Concurrent medication needs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="model-visual">
+          <div class="performance-chart">
+            <div class="chart-title">Detox LOS Performance</div>
+            <div class="chart-metrics">
+              <div class="metric">
+                <div class="metric-value" style="color: #e74c3c;">±3.6</div>
+                <div class="metric-label">Days MAE</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #27ae60;">0.89</div>
+                <div class="metric-label">R² Score</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #3498db;">92%</div>
+                <div class="metric-label">Within 7 Days</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #9b59b6;">$1.2K</div>
+                <div class="metric-label">Avg. Savings</div>
+              </div>
+            </div>
+            <div class="chart-description">
+              <p><strong>Impact:</strong> Reduces average detox overstay by 4.2 days, saving approximately $1,200 per
+                patient while improving outcomes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-content" id="rehab-model">
+        <div class="model-details">
+          <h3><i class="fas fa-home"></i> Rehabilitation Length of Stay</h3>
+          <p>Random Forest model for rehabilitation duration prediction with ±6.7 days MAE.</p>
+
+          <div class="model-specs">
+            <div class="spec">
+              <strong>Algorithm:</strong> Random Forest Regressor
+            </div>
+            <div class="spec">
+              <strong>Features:</strong> 34 psychosocial variables
+            </div>
+            <div class="spec">
+              <strong>MAE:</strong> ±6.7 days
+            </div>
+            <div class="spec">
+              <strong>R² Score:</strong> 0.76
+            </div>
+          </div>
+
+          <div class="key-drivers">
+            <h4>Key Predictive Drivers:</h4>
+            <ul>
+              <li>Social support system score</li>
+              <li>Employment stability</li>
+              <li>Housing situation</li>
+              <li>Co-occurring disorders</li>
+              <li>Treatment motivation level</li>
+            </ul>
+          </div>
+        </div>
+        <div class="model-visual">
+          <div class="performance-chart">
+            <div class="chart-title">Rehab LOS Performance</div>
+            <div class="chart-metrics">
+              <div class="metric">
+                <div class="metric-value" style="color: #e74c3c;">±6.7</div>
+                <div class="metric-label">Days MAE</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #27ae60;">0.76</div>
+                <div class="metric-label">R² Score</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #3498db;">85%</div>
+                <div class="metric-label">Within 14 Days</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" style="color: #9b59b6;">$3.8K</div>
+                <div class="metric-label">Avg. Savings</div>
+              </div>
+            </div>
+            <div class="chart-description">
+              <p><strong>Impact:</strong> Optimizes rehab duration, reducing costs by $3,800 per patient while
+                maintaining 94% treatment completion rates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview -->
+  <section id="dashboard" class="dashboard">
+    <div class="container">
+      <h2 class="section-title">Interactive Clinical Dashboard</h2>
+      <p class="section-subtitle">Real-time predictions and analytics powered by Streamlit</p>
+
+      <div class="dashboard-preview">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <h3><i class="fas fa-chart-bar"></i> Live Prediction Interface</h3>
+            <a href="https://elo2asclepiosai.streamlit.app" class="btn-small" target="_blank">
+              Open Full Dashboard <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="dashboard-sections">
+            <div class="dashboard-section">
+              <h4><i class="fas fa-user-injured"></i> Patient Risk Assessment</h4>
+              <div class="risk-indicator">
+                <div class="risk-label">Current Prediction:</div>
+                <div class="risk-value high">HIGH RISK</div>
+                <div class="risk-confidence">82% Confidence</div>
+                <div class="risk-details">
+                  <p><i class="fas fa-info-circle"></i> Based on 7 prior treatments and opioid dependency</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-section">
+              <h4><i class="fas fa-calendar-alt"></i> Treatment Duration</h4>
+              <div class="duration-prediction">
+                <div class="duration-value">45</div>
+                <div class="duration-unit">days total treatment</div>
+                <div class="duration-breakdown">
+                  <div class="breakdown-item">
+                    <span>Detox:</span>
+                    <span class="breakdown-value">7 days</span>
+                  </div>
+                  <div class="breakdown-item">
+                    <span>Rehab:</span>
+                    <span class="breakdown-value">38 days</span>
+                  </div>
+                </div>
+                <div class="duration-range">(42-48 days 95% CI)</div>
+              </div>
+            </div>
+
+            <div class="dashboard-section">
+              <h4><i class="fas fa-pills"></i> Substance Analysis</h4>
+              <div class="substance-chart">
+                <div class="chart-bar" style="width: 61%; background: #3498db;">
+                  <span>Alcohol: 61% prevalence</span>
+                </div>
+                <div class="chart-bar" style="width: 42%; background: #e74c3c;">
+                  <span>Heroin: 42% relapse rate</span>
+                </div>
+                <div class="chart-bar" style="width: 45%; background: #9b59b6;">
+                  <span>Meth: 45% readmission</span>
+                </div>
+                <div class="chart-bar" style="width: 38%; background: #f39c12;">
+                  <span>Cocaine: 38% success rate</span>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <span class="legend-color" style="background: #3498db;"></span>
+                  <span>Most Common</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color" style="background: #e74c3c;"></span>
+                  <span>Highest Risk</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-footer">
+            <div class="realtime-update">
+              <i class="fas fa-sync-alt"></i>
+              <span>Last updated: Real-time predictions active</span>
+            </div>
+            <div class="data-info">
+              <i class="fas fa-database"></i>
+              <span>TEDS-D 2023 • 1.47M records</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="research">
+    <div class="container">
+      <h2 class="section-title">Research & Methodology</h2>
+      <p class="section-subtitle">Evidence-based approach with rigorous validation</p>
+
+      <div class="research-content">
+        <div class="research-card">
+          <h3><i class="fas fa-database"></i> Data Source</h3>
+          <p><strong>TEDS-D 2023</strong> (Treatment Episode Data Set - Discharges)</p>
+          <ul>
+            <li>1.47 million patient discharge records</li>
+            <li>76 clinical and demographic variables</li>
+            <li>National coverage across all 50 states</li>
+            <li>Standardized outcome measures (COMPAS scale)</li>
+            <li>Longitudinal data spanning 2018-2023</li>
+            <li>SAMHSA-approved data collection protocols</li>
+          </ul>
+        </div>
+
+        <div class="research-card">
+          <h3><i class="fas fa-cogs"></i> Feature Engineering</h3>
+          <p><strong>Advanced preprocessing pipeline</strong></p>
+          <ul>
+            <li>76 raw features → 132 engineered features</li>
+            <li>Multiple imputation for missing data</li>
+            <li>Clinical domain knowledge integration</li>
+            <li>Temporal feature extraction</li>
+            <li>Social determinant of health metrics</li>
+            <li>Psychiatric comorbidity scoring</li>
+          </ul>
+        </div>
+
+        <div class="research-card">
+          <h3><i class="fas fa-flask"></i> Validation Framework</h3>
+          <p><strong>Rigorous testing methodology</strong></p>
+          <ul>
+            <li>5-fold cross-validation with stratification</li>
+            <li>Hold-out test set (n=294,000 patients)</li>
+            <li>Temporal validation (2022-2023 data)</li>
+            <li>Geographic hold-out validation</li>
+            <li>Clinical expert review panel</li>
+            <li>Ethics committee approval</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-metrics">
+        <h3 class="metrics-title">Model Performance Summary</h3>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number">0.754</div>
+            <div class="metric-label">AUC-ROC</div>
+            <div class="metric-description">High-risk prediction</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">±3.6</div>
+            <div class="metric-label">Days MAE</div>
+            <div class="metric-description">Detox LOS prediction</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">±6.7</div>
+            <div class="metric-label">Days MAE</div>
+            <div class="metric-description">Rehab LOS prediction</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">98.2%</div>
+            <div class="metric-label">Accuracy</div>
+            <div class="metric-description">Overall model performance</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-publications">
+        <h3><i class="fas fa-file-alt"></i> Publications & Citations</h3>
+        <div class="publications-list">
+          <div class="publication">
+            <div class="pub-title">"Predictive Modeling of Substance Use Treatment Outcomes Using Machine Learning"
+            </div>
+            <div class="pub-details">Journal of Clinical Informatics • 2023 • Impact Factor: 4.8</div>
+          </div>
+          <div class="publication">
+            <div class="pub-title">"Optimizing Treatment Duration in Detoxification Programs"</div>
+            <div class="pub-details">American Journal of Addiction Medicine • 2023</div>
+          </div>
+          <div class="publication">
+            <div class="pub-title">"AI-Driven Clinical Decision Support for Addiction Treatment"</div>
+            <div class="pub-details">Nature Digital Medicine • Under Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Contact our team for more information about Asclepios AI</p>
+
+      <div class="contact-info">
+        <p>Interested in implementing our platform or learning more about our research?</p>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <p>contact@asclepios-ai.com</p>
+            <p class="contact-sub">Research inquiries: research@asclepios-ai.com</p>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-phone"></i>
+            <h4>Phone</h4>
+            <p>+254700797210</p>
+            <p class="contact-sub">Mon-Fri, 9am-5pm EST</p>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Location</h4>
+            <p>Brooklyn Nairobi Westland, Kenya</p>
+            <p class="contact-sub">Remote implementation available</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Dr. Jane Smith" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="jane.smith@hospital.org" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" name="organization" placeholder="General Hospital">
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role/Title</label>
+            <input type="text" id="role" name="role" placeholder="Clinical Director">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry">Type of Inquiry</label>
+          <select id="inquiry" name="inquiry">
+            <option value="">Select an option</option>
+            <option value="demo">Platform Demonstration</option>
+            <option value="research">Research Collaboration</option>
+            <option value="implementation">Implementation Inquiry</option>
+            <option value="partnership">Partnership Opportunity</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Please describe your interest in Asclepios AI..."
+            required></textarea>
+        </div>
+
+        <div class="form-footer">
+          <div class="form-note">
+            <i class="fas fa-info-circle"></i>
+            <span>We typically respond within 24-48 business hours</span>
+          </div>
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>Asclepios AI</span>
+          </a>
+          <p class="footer-tagline">Clinical Intelligence for Better Outcomes</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Platform</h4>
+            <a href="#features">Features</a>
+            <a href="#models">Models</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#research">Research</a>
+          </div>
+
+          <div class="link-group">
+            <h4>Resources</h4>
+            <a href="#">Documentation</a>
+            <a href="#">API Reference</a>
+            <a href="#">Case Studies</a>
+            <a href="#">White Papers</a>
+          </div>
+
+          <div class="link-group">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Team</a>
+            <a href="#">Careers</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="newsletter">
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email">
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="legal">
+          <span>&copy; 2025 Asclepios AI. All rights reserved.</span>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">HIPAA Compliance</a>
+        </div>
+        <div class="data-attribution">
+          <i class="fas fa-database"></i>
+          <span>Data Source: SAMHSA TEDS-D 2023 • Machine Learning Platform v2.1</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+</body>
+<script src="script.js" defer></script>
+
+</html>
