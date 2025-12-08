@@ -181,7 +181,8 @@ vulnerabilities are interconnected risk factors.
 - Not in labor force: significant numbers across all major substance
   categories
 - Full-time employed: present across all substance types
-![Employment Status](https://i.postimg.cc/yWnK4bqc/7-employment-statutes.png)
+  
+![pic](https://i.postimg.cc/yWnK4bqc/7-employment-statutes.png)
 
 ### 10. Treatment History & Mental Health
 
@@ -210,121 +211,117 @@ Key Takeaways
 
 ## TEDS-D EXPLORATION AND ANALYSIS
 
-### 1. Demographic & Background Exploration
+### 11. Demographic & Background Exploration
 
 The dataset shows distinct patterns in the population entering and leaving treatment.
 
 Sex Distribution:
 
-Male: 64.7%
+- Male: 64.7%
 
-Female: 35.3%
+- Female: 35.3%
 
 Conclusion: The treatment population remains predominantly male,
 accounting for nearly two-thirds of all discharges.
 
 Age Distribution:
 
-Second Most Common: Adults aged 35–44 (28.3%)
+- Second Most Common: Adults aged 35–44 (28.3%)
 
 Conclusion: Treatment is heavily concentrated among young to
 middle-aged adults (ages 25–44), representing over 65% of the
 total population.
 
 Race/Ethnicity Distribution:
-Black/African American: 20.0%
-Race/Ethnicity Distribution:
-
-Black/African American: 20.0%
-
-Hispanic/Latino: 15.2%
 
 Conclusion: White individuals constitute the majority of
 discharges, followed by Black and Hispanic populations.
 
 Marital Status:
 
-Never Married: ~52% (Dominant category)
+- Never Married: ~52% (Dominant category)
 
-Conclusion: Single individuals (Never Married) represent more than
 Conclusion: Single individuals (Never Married) represent more
 than half of the treatment population, indicating lower social
 support structures compared to married individuals.
-<https://i.postimg.cc/wM9XpH75/1-age-disturbution.png>
-<https://i.postimg.cc/cCdRSZrF/2-sex-distribution.png>
-<https://i.postimg.cc/Y0t6HkhR/3-marital-status.png>
+
+![pic](https://i.postimg.cc/wM9XpH75/1-age-disturbution.png)
+![pic](https://i.postimg.cc/cCdRSZrF/2-sex-distribution.png)
+![pic](https://i.postimg.cc/Y0t6HkhR/3-marital-status.png)
 
 ### 2. Substance Use Patterns
 
 Primary Substance:
 
-Alcohol: 35.5% (Rank: #1)
+- Alcohol: 35.5% (Rank: #1)
 
-Heroin: 16.9%
+- Heroin: 16.9%
 
-Marijuana/Hashish: ~12-14%
+- Marijuana/Hashish: ~12-14%
 
-Methamphetamine: ~10-11%
+- Methamphetamine: ~10-11%
 
-Other Opiates/Synthetics: ~8-9%
+- Other Opiates/Synthetics: ~8-9%
 
-Cocaine/Crack: ~5-6%
+- Cocaine/Crack: ~5-6%
 
 Route of Administration:
 
-Smoking: Primary route for Cocaine/Crack and Marijuana.
+- Smoking: Primary route for Cocaine/Crack and Marijuana.
 
-Oral: Dominant route for Alcohol and Other Opiates.
+- Oral: Dominant route for Alcohol and Other Opiates.
 
 Conclusion: Alcohol remains the single most common substance
 (35.5%), but Opioids (Heroin + Other Opiates) combined account for
 nearly 26% of all discharges, representing a significant burden on
 the system.
 
-<https://i.postimg.cc/HnTwgHV3/5-route.png>
+![pic](https://i.postimg.cc/HnTwgHV3/5-route.png)
 
-<https://i.postimg.cc/wM9XpH7W/4-top-15-primary-substance.png>
+![pic](https://i.postimg.cc/wM9XpH7W/4-top-15-primary-substance.png)
 
 ### 3. Treatment History & Referral Sources
 
-Over 60% of patients have at least one prior
+- Over 60% of patients have at least one prior
 treatment episode, reinforcing the chronic, relapsing nature of
 the condition.
 
 Prior Treatment Episodes:
-5+ Prior Episodes: ~15.0%
 
-<https://i.postimg.cc/90cdhVrn/9-prior-treatment.png>
+- 5+ Prior Episodes: ~15.0%
+
+![pic](https://i.postimg.cc/90cdhVrn/9-prior-treatment.png)
 
 Referral Sources:
 
-Individual/Self: ~35-40% (Primary voluntary source)
+- Individual/Self: ~35-40% (Primary voluntary source)
 
-Criminal Justice/DUI: ~30-35% (Primary mandatory source)
+- Criminal Justice/DUI: ~30-35% (Primary mandatory source)
 
 Community/Social Services: ~10-15%
-<https://i.postimg.cc/Fzhy4m72/7-referral-sources.png>
+![pic](https://i.postimg.cc/Fzhy4m72/7-referral-sources.png)
 
 ### 4. Service Types & Length of Stay (LOS)
 
 Most of the treatments are short-term resedantial  80%
+
 Service Type Distribution:
-Detox (24hr Residential): ~10%
 
-Rehab/Residential: ~15%
+- Detox (24hr Residential): ~10%
+- Rehab/Residential: ~15%
 
-<https://i.postimg.cc/1XyGQPf2/6-service-types-distribution.png>
+![pic](https://i.postimg.cc/1XyGQPf2/6-service-types-distribution.png)
 
 Length of Stay:
 
-Detox: Median stay 3–5 days (Short-term).
+- Detox: Median stay 3–5 days (Short-term).
 
-Residential: Median stay 30–90 days.
+- Residential: Median stay 30–90 days.
 
 The analysis compares economic stability between the start and
 end of treatment.
 
-<https://i.postimg.cc/mkVQZqHK/13-LOS.png>
+![pic](https://i.postimg.cc/mkVQZqHK/13-LOS.png)
 
 ### 5. Employment Patterns (Admission vs. Discharge)
 
@@ -334,41 +331,30 @@ Conclusion: Employment rates show minimal improvement between
 admission and discharge, suggesting that treatment engagement
 alone does not immediately resolve economic barriers.
 
-<https://i.postimg.cc/Vv4jsTCD/10-emploiment-status.png>
+![pic](https://i.postimg.cc/Vv4jsTCD/10-emploiment-status.png)
 
 ### 6. Discharge Outcomes & Mental Health
 
-Co-occurring Disorders: Approximately 45-50% of patients have
+- Co-occurring Disorders: Approximately 45-50% of patients have
 a diagnosed mental health problem.
 
-Impact on Outcome: Patients with co-occurring mental health
+- Impact on Outcome: Patients with co-occurring mental health
 disorders have a slightly lower completion rate and higher
 transfer rate than those without, often requiring more
 intensive or longer-term care.
 episodes.
 
-Vulnerable Populations: Young adults (25-34), unemployed
+- Vulnerable Populations: Young adults (25-34), unemployed
 Completion Rate: Less than half (47.4%) of all discharges
 result in completed treatment, highlighting a retention gap.
 
-Substance Dominance: Alcohol drives over 1/3 of all admissions,
+- Substance Dominance: Alcohol drives over 1/3 of all admissions,
 but Opioids represent the most severe chronic cases (high prior
 episodes).
 
-Vulnerable Populations: Young adults (25-34), unemployed
-individuals, and those with prior treatment history are the
-most "at-risk" demographic groups in the dataset.
-
-Completion Rate: Less than half (47.4%) of all discharges result in
+- Completion Rate: Less than half (47.4%) of all discharges result in
 completed treatment, highlighting a retention gap.
 
-Substance Dominance: Alcohol drives over 1/3 of all admissions, but
-Opioids represent the most severe chronic cases (high prior episodes).
+![pic](https://i.postimg.cc/6qzd6SvD/14-AGE-VS-primary-sub.png)
 
-Vulnerable Populations: Young adults (25-34), unemployed individuals,
-and those with prior treatment history are the most "at-risk" demographic
-groups in the dataset.
-
-<https://i.postimg.cc/6qzd6SvD/14-AGE-VS-primary-sub.png>
-
-<https://i.postimg.cc/QCSpNP7r/15-last-one.png>
+![pic](https://i.postimg.cc/QCSpNP7r/15-last-one.png)
