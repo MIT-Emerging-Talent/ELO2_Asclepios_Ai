@@ -59,16 +59,25 @@ Our platform provides:
 
 This folder contains:
 
-- ## 📄 Asclepios AI Deck Presentation
-
-This presentation is configured to **start playing and loop automatically** once the link is opened in your browser.
-
-[![Click to View Slideshow - Asclepios AI Deck](https://ibb.co/jPLGfKGZ)](https://shorturl.at/Ehmuf)
-- ### Asclepios AI Platform Demonstration
-
-[![Watch the Demo Video](https://img.youtube.com/vi/qceYtFXxFX4/0.jpg)](https://www.youtube.com/watch?v=qceYtFXxFX4)
 - `README.md` -- Project overview (this file)
 - `guide.md` -- Additional guidance for reviewers
+
+***
+
+## 📄 Asclepios AI Deck Presentation
+
+This presentation is configured to start playing and loop automatically once the
+ link is opened in your browser.
+
+[![Click to View Slideshow - Asclepios AI Deck](asclepios_AI.png)](https://shorturl.at/Ehmuf)
+
+***
+
+## 🎬 Asclepios AI Platform Demonstration
+
+Click the image below to watch the full demo video on YouTube.
+
+[![Watch the Demo Video](https://img.youtube.com/vi/qceYtFXxFX4/0.jpg)](https://www.youtube.com/watch?v=qceYtFXxFX4)
 
 ------------------------------------------------------------------------
 
