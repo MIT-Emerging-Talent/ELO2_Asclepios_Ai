@@ -62,14 +62,14 @@ This folder contains:
 - `README.md` -- Project overview (this file)
 - `guide.md` -- Additional guidance for reviewers
 
-**📄 Asclepios AI Deck Presentation**
+## 📄 Asclepios AI Deck Presentation
 
 This presentation is configured to start playing and loop automatically once the
  link is opened in your browser.
 
 [![Click to View Slideshow - Asclepios AI Deck](asclepios_AI.png)](https://shorturl.at/Ehmuf)
 
-**🎬 Asclepios AI Platform Demonstration**
+## 🎬 Asclepios AI Platform Demonstration
 
 Click below to watch the full demo video on YouTube.
 
